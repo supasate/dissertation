@@ -1,1 +1,1 @@
-rm *.log *.lot *.lof *.aux *.toc
+rm -rf *.log *.lot *.lof *.aux *.toc *.out *.pdf *.blg  *.pdf_original *.synctex.gz

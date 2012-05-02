@@ -1,0 +1,55 @@
+*********************************************
+*                  README                   *
+*                                           *
+*    By Supasate Choochaisri                *
+*    Department of Computer Engineering     *
+*    Faculty of Engineering                 *
+*    Chulalongkorn University               *
+*    Update: 3 May 2012                     *
+*                                           *
+*********************************************
+
+Installation:
+  [Ubuntu] (tested with 12.04 Precise)
+  sudo apt-get install xetex
+
+  [Windows] (not tested)
+  Bundled with MikTeX 2.9 http://miktex.org 
+  or TeX Live 2011 http://www.tug.org/texlive/
+  
+  [Mac OS X] (not tested)
+  Bundled with MacTeX 2011 http://www.tug.org/mactex/2011/
+
+--------------------------------------------
+Compilation: *require XeTeX
+  [When citations/references are changed.]
+  xelatex -interaction=nonstopmode -file-line-error -synctex=1 supasate.tex
+  bibtex supasate.aux
+  xelatex -interaction=nonstopmode -file-line-error -synctex=1 supasate.tex
+  xelatex -interaction=nonstopmode -file-line-error -synctex=1 supasate.tex
+
+  [When citations/references are not changed.]
+  xelatex -interaction=nonstopmode -file-line-error -synctex=1 supasate.tex
+
+--------------------------------------------
+Main files:
+  supasate.tex        - parameter settings such as thesis title, author, advisor, committee, chapter files, and bibtex file
+  abstractthai.tex    - abstract in Thai: need swath for word segmentation (see wordsegment.sh)
+  abstractenglish.tex - abstract in English
+  chapter(1 to n).tex - main content divided to n chapters
+  acknowledgement.tex - acknowledgement section
+  biography.tex       - biography section
+  figure/*            - folder for figures
+  macros.tex          - for mathematics macros
+  ucharclasses.sty    - for automatic language switching
+  chula.cls           - Chula latex class file
+  chula_nat.bst       - Chula bibliography style file
+
+--------------------------------------------
+Additional files:
+  algorithm.sty, algorithmic.sty - for algorithm pseudocode
+  wordsegment.sh                 - for Thai words segmentation in abstract
+  compile.sh                     - for compilation when citations/references are not changed 
+  compile_ref_changed.sh         - for compilation when citations/references are changed
+  editmeta.sh                    - for editing metadata (require exiftool)
+  clean.sh                       - for removing all generated files (*.log *.lot *.lof *.aux *.toc *.out *.pdf *.blg  *.pdf_original *.synctex.gz)

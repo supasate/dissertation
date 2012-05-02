@@ -1,2 +1,1 @@
-xelatex -interaction=nonstopmode supasate_dissertation.tex
-exiftool -Title="A Physicomimetics Desynchronization Algorithm without Global Time Knowledge for Wireless Sensor Networks" -Subject="Ph.D. Dissertation, Department of Computer Engineering, Chulalongkorn University, Thailand, 2012" -Author="Supasate Choochaisri" -Keywords="DESYNCHRONIZATION, PHYSICOMIMETICS, ARTIFICIAL FORCE FIELD, WIRELESS SENSOR NETWORK, WIRELESS NETWORK" supasate_dissertation.pdf
+xelatex -interaction=nonstopmode -file-line-error -synctex=1 supasate.tex

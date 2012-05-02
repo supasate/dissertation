@@ -1,2 +1,2 @@
-cp thaiabstract.tex thaiabstract-before.tex
-swath -f latex -u u,u < thaiabstract-before.tex > thaiabstract.tex
+cp abstractthai.tex abstractthai-before.tex
+swath -f latex -u u,u < abstractthai-before.tex > abstractthai.tex

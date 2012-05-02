@@ -1,0 +1,9 @@
+\begin{englishabstract}
+Desynchronization is useful for scheduling nodes to perform tasks at different time. This property is desirable for resource sharing, Time Division Multiple Access (TDMA) scheduling, and data transmission collision avoiding.
+However, to desynchronize nodes in wireless sensor networks is difficult due to several limitations.
+In this dissertation, we focus on desynchronization for resource-limited wireless sensor networks that resource-limited sensor nodes lack global time knowledge (\textit{i.e.}, clocks are not synchronized).
+We propose a novel physicomimetics desynchronization algorithm to organize all accesses to a shared resource to be collision-free and even equitable.
+Inspired by robotic circular formation and Physics principle, the proposed algorithm creates an artificial force field for wireless sensor nodes. 
+Each neighboring node has artificial forces to repel other nodes to perform tasks at different time phases. Nodes with closer time phases have stronger forces to repel each other in the time domain. Each node adjusts its time phase proportionally to total received forces. Once the total received forces are balanced, nodes are desynchronized. 
+We evaluate our desynchronization algorithm on TOSSIM, a simulator for wireless sensor networks and evaluate on real hardware devices running TinyOS. The evaluation results indicate that the proposed algorithm is stable, scales much better than existing approaches, and incurs significantly lower desynchronization error.
+\end{englishabstract}

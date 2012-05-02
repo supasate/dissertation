@@ -1,0 +1,278 @@
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}
+\setlength {\parskip }{0.0cm}
+\thispagestyle {myheadings}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Desynchronization framework\relax }}{7}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Robotic pattern formation on a closed ring. (a) Robots are randomly placed on a closed ring. (b) In the perfect configuration, robots are equitably separated from each other. \relax }}{11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{11}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Moving to the midpoint algorithm. (a) Each robot moves to the midpoint between two nearest visible neighbors. (b) The algorithm converges to the perfect configuration.\relax }}{11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{11}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Results of Robotic Circular Formation. Robots with two different types form the circle.\relax }}{12}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Artificial Force Field. Arrow lines represent repelling forces from node 2, 3, and 4 to node 1. A shorter and thicker line is a stronger force. A force from node 4 is a positive force and two forces from node 2 and 3 are negative forces.\relax }}{16}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Relation of the coefficient $K$ with a number of nodes $n$\relax }}{18}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pseudocode of DWARF algorithm\relax }}{20}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces DESYNC: Varying step size from 0.10 to 0.35\relax }}{22}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\alpha $ = 0.10}}}{22}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\alpha $ = 0.15}}}{22}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $ = 0.20}}}{22}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\alpha $ = 0.25}}}{22}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\alpha $ = 0.30}}}{22}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\alpha $ = 0.35}}}{22}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces DESYNC: Varying step size from 0.40 to 0.65\relax }}{23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\alpha $ = 0.40}}}{23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\alpha $ = 0.45}}}{23}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $ = 0.50}}}{23}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\alpha $ = 0.55}}}{23}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\alpha $ = 0.60}}}{23}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\alpha $ = 0.65}}}{23}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces DESYNC: Varying step size from 0.70 to 0.95\relax }}{24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\alpha $ = 0.70}}}{24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\alpha $ = 0.75}}}{24}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $ = 0.80}}}{24}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\alpha $ = 0.85}}}{24}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\alpha $ = 0.90}}}{24}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\alpha $ = 0.95}}}{24}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Root mean square error after 300 time periods\relax }}{25}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Root mean square error normalized by perfect phase difference after 300 time periods\relax }}{25}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Convergence time and absolute root mean square error\relax }}{27}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sparse}}}{27}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dense}}}{27}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Extremely Dense}}}{27}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Convergence time and root mean square error normalized by expected phase difference\relax }}{27}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sparse}}}{27}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dense}}}{27}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Extremely Dense}}}{27}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Correlation of packet loss and desynchronization error\relax }}{28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {16 nodes}}}{28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {48 nodes}}}{28}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {80 nodes}}}{28}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear dynamic system when $n$ is even. (a) The snapshot of the system at one time step. (b) In next time step after node 0 adjusts its phase, node 1 in previous round is re-labelled to 0, node 2 is re-labelled to 1, and so on.\relax }}{33}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{33}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{33}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Non-linear dynamic system when $n$ is odd. (a) The snapshot of the system at one time step. (b) In next time step after node 0 adjusts its phase, node 1 in previous round is re-labelled to 0, node 2 is re-labelled to 1, and so on.\relax }}{34}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{34}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{34}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A simple multi-hop network.\relax }}{46}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Message collision on a 3-node multi-hop chain network. The period T is 1000 milliseconds. Node 1 is at phase 0 whereas node 3 is approximately at the same phase as node 1.\relax }}{47}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The perfect desynchrony state of a 3-node multi-hop chain network, The period T is 1000 milliseconds. Node 1 is at phase 0 whereas others are separated by T/3 milliseconds.\relax }}{47}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The hidden terminal problem.\relax }}{48}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces A node includes its one-hop neighbors' firing times into a firing message. (a) Node 2 fires a message containing node 1's and node 2's firing timestamps that it perceives. (b) Node 1 misunderstands the time phase of node 3 because local time of node 1 and local time of node 2 are different.\relax }}{49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces EXT-DWARF: A node includes its one-hop neighbors' relative phases into a firing message. (a) Node 2 fires a message containing node 1's and node 2's relative phases. (b) Node 1 marks the node 2's phase as a reference phase and uses it as an offset for calculating the node 3's phase. (c) Eventually, nodes are in the perfect desynchrony state.\relax }}{50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces The problem of the single-hop DWARF algorithm. (a) A 4-node chain topology. The transmission signal of node 2 does not interfere any receiver of node 3 and vice versa. (b) In the node 0's local view, the expected result is that node 2 and node 3 can share the same phase without interference. (c) In extended DWARF, node 0 is not in the expected phase because there are two forward repelling forces from node 2 and node 3 while there is one backward repelling force from node 1.\relax }}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{51}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces EXT-DWARF with force absorption. The blur line represented an absorbed force. (a) When node 2 and 3 are apart, the force from node 2 affects node 0 but the force is partly absorbed. (b) When node 2 and 3 are at the same phase, the force from node 2 is fully absorbed.\relax }}{52}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{52}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{52}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Pseudocode of M-DWARF algorithm\relax }}{55}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces (a) Root mean square error after 300 time periods. (b) Root mean square error normalized by perfect phase difference after 300 time periods.\relax }}{56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{56}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Convergence time and absolute root mean square error\relax }}{57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sparse}}}{57}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dense}}}{57}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Convergence time and root mean square error normalized by expected phase difference\relax }}{57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sparse}}}{57}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dense}}}{57}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Fluctuation in some cases of EXTENDED-DESYNC.\relax }}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 nodes}}}{58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {16 nodes}}}{58}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Star topology\relax }}{59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {6 nodes}}}{59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {20 nodes}}}{59}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.15}{\ignorespaces 6-node star topology evaluation (average case).\relax }}{59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{59}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{59}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.16}{\ignorespaces 20-node star topology evaluation (average case).\relax }}{59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{59}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{59}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.17}{\ignorespaces 6-node star topology evaluation (problematic case).\relax }}{60}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{60}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{60}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{60}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.18}{\ignorespaces 20-node star topology evaluation (problematic case).\relax }}{60}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{60}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{60}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{60}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Chain topology\relax }}{61}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {3 nodes}}}{61}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10 nodes}}}{61}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.20}{\ignorespaces 3-node chain topology evaluation (average case).\relax }}{61}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{61}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{61}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{61}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.21}{\ignorespaces 10-node chain topology evaluation (average case).\relax }}{61}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{61}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{61}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{61}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.22}{\ignorespaces 3-node chain topology evaluation (problematic case).\relax }}{62}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{62}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{62}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{62}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.23}{\ignorespaces 10-node chain topology evaluation (problematic case).\relax }}{62}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{62}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{62}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{62}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Cycle topology\relax }}{63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {4 nodes}}}{63}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10 nodes}}}{63}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.25}{\ignorespaces 4-node cycle topology evaluation (average case).\relax }}{63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{63}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{63}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{63}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.26}{\ignorespaces 10-node cycle topology evaluation (average case).\relax }}{63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{63}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{63}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{63}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.27}{\ignorespaces 4-node cycle topology evaluation (problematic case).\relax }}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{64}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{64}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.28}{\ignorespaces 10-node cycle topology evaluation (problematic case).\relax }}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{64}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{64}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Dumbbell topology\relax }}{65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {6 nodes}}}{65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {20 nodes}}}{65}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.30}{\ignorespaces 6-node dumbbell topology evaluation (average case).\relax }}{65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{65}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{65}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.31}{\ignorespaces 20-node dumbbell topology evaluation (average case).\relax }}{65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{65}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{65}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.32}{\ignorespaces 6-node dumbbell topology evaluation (problematic case).\relax }}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{66}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{66}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.33}{\ignorespaces 20-node dumbbell topology evaluation (problematic case).\relax }}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{66}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{66}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.34}{\ignorespaces 10-node multi-hop network. A solid line represents 1-hop connectivity. A dash line represents 2-hop connectivity. Any two nodes that are connected within 2-hop connectivity can interfere each other transmission.\relax }}{67}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.35}{\ignorespaces 10-node mesh topology evaluation (average case).\relax }}{67}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{67}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{67}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{67}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.36}{\ignorespaces 10-node mesh topology evaluation (problematic case).\relax }}{67}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {M-DWARF}}}{67}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {EXTENDED-DESYNC}}}{67}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LIGHTWEIGHT}}}{67}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Impact of period length ($T$) in M-DWARF\relax }}{68}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{68}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{68}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{68}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Impact of period length ($T$) in EXTENDED-DESYNC\relax }}{68}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{68}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{68}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{68}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Average channel utilization of 30 and 40 node networks\relax }}{69}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{69}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{69}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{69}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.40}{\ignorespaces Average channel utilization of 50 and 60 node networks\relax }}{69}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{69}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{69}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{69}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Average standard deviation of channel utilization per node of 30 and 40 node networks\relax }}{70}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{70}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{70}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{70}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Average standard deviation of channel utilization per node of 50 and 60 node networks\relax }}{70}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T$ = 1000 ms}}}{70}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$T$ = 2000 ms}}}{70}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T$ = 3000 ms}}}{70}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
+\contentsline {figure}{\numberline {5.43}{\ignorespaces Optimized M-DWARF: Varying saving gain from 0 to 20.\relax }}{72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\beta $ = 0}}}{72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\beta $ = 4}}}{72}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\beta $ = 8}}}{72}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\beta $ = 12}}}{72}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\beta $ = 16}}}{72}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\beta $ = 20}}}{72}
+ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace {-1cm}Figure\hfill Page\hspace {-0.1cm}} \fi 
