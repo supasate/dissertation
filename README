@@ -33,17 +33,18 @@ Compilation: *require XeTeX
 
 --------------------------------------------
 Main files:
-  supasate.tex        - parameter settings such as thesis title, author, advisor, committee, chapter files, and bibtex file
-  abstractthai.tex    - abstract in Thai: need swath for word segmentation (see wordsegment.sh)
-  abstractenglish.tex - abstract in English
-  chapter(1 to n).tex - main content divided to n chapters
-  acknowledgement.tex - acknowledgement section
-  biography.tex       - biography section
-  figure/*            - folder for figures
-  macros.tex          - for mathematics macros
-  ucharclasses.sty    - for automatic language switching
-  chula.cls           - Chula latex class file
-  chula_nat.bst       - Chula bibliography style file
+  supasate.tex         - parameter settings such as thesis title, author, advisor, committee, chapter files, and bibtex file
+  abstractthai.tex     - abstract in Thai: need swath for word segmentation (see wordsegment.sh)
+  abstractenglish.tex  - abstract in English
+  chapter(1 to n).tex  - main content divided to n chapters
+  appendix(1 to m).tex - m appendices
+  acknowledgement.tex  - acknowledgement section
+  biography.tex        - biography section
+  figure/*             - folder for figures
+  macros.tex           - for mathematics macros
+  ucharclasses.sty     - for automatic language switching
+  chula.cls            - Chula latex class file
+  chula_nat.bst        - Chula bibliography style file
 
 --------------------------------------------
 Additional files:
