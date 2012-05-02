@@ -1,0 +1,453 @@
+\chapter{Stability Analysis of the Multi-hop Algorithm}
+\label{chap:stability-multihop}
+
+The multi-hop stability analysis in this chapter is more complicated than the analysis of single-hop networks (Chapter \ref{chap:stability-singlehop}) due to the connectivity and topology affect the analysis.
+We begin by formalizing components of forces to a general form. Then, we transform the system into a dynamic system equations and locally analyse at the equilibrium.
+
+\section{Definition}
+We first define several variables and notations to be used throughout the analysis in this chapter.
+
+We define $n$ to be the number of nodes in the system and $T$ be the time period. We assume $n$ is even. However, in the case of odd $n$, the system can be analysed with the same procedure.
+
+We define $c_{i,j}$ to be a connectivity status in two-hop communication from node $j$ to node $i$.
+If node $i$ perceives the presence of node $j$ (as a one-hop neighbor or by relaying relative phase), $c_{i,j}$ is 1. Otherwise, $c_{i,j}$ is 0. For example, in a simple 3-node chain network with node labelled 0, 1, and 2 respectively, if communication links are symmetry, the values of $c_{0,1}, c_{1,0}, c_{1,2}$, and $c_{2,1}$ are 1 whereas the values of $c_{0,2}$ and $c_{2,0}$ are 0. We assume that nodes are labelled sequentially in increasing order from $0$ to $n-1$ according the the increasing phase in the global period ring.
+
+We define the modulo notation $[x]_n$ to stand for $x \mod n$ for brevity.
+
+We define $\Delta_i$ to be a phase interval between node $i$ and node $[i+1]_n$, where $\Delta_i \in (0, T]$.
+
+
+\section{Force Component}
+To construct a dynamic system, we first analyse how force with the absorption mechanism affects the system equations.
+As described in Chapter \ref{chap:multihop}, a force can be absorbed if it is not originated from the closest phase neighbor. Therefore, respect to the node $i$'s point of view, some forces have no effect to node $i$ whereas some forces do. 
+We classify forces that affect node $i$ into three components: closest component, resistance component, and absorption component.
+The final form of forces that affect node $i$ will be in the following form:
+\begin{alignat}{2}
+F_{i} =& (\text{closest component} + \text{resistance component} - \text{absorption component})_{positive} \nonumber \\
+ &- (\text{closest component} + \text{resistance component} - \text{absorption component})_{negative}.
+\end{alignat}
+
+\textit{Closest component}:
+Respect to the node $i$'s point of view, the closest component is the force from the closest phase neighbor of node $i$ and node $i$ perceives its presence. This force is not absorbed by any node. This force component from node $j$ to node $i$ will appear in the equation if, between node $j$ and node $i$, node $i$ does not perceive the presence of any node. In other words, node $j$ is the closest perceived phase neighbor of node $i$. We firstly define the closest component for node $i$ by using the combination of logic and algebraic expression as follows (we use it only for clarification purpose and we will change it to pure algebraic expression later),
+\begin{alignat}{1}
+& \Bigg((c_{i,[i+(n-1)]_n})f_{i,[i+(n-1)]_n}^{+} + (\lnot c_{i,[i+(n-1)]_n} \land c_{i,[i+(n-2)]_n})f_{i,[i+(n-2)]_n}^{+} \nonumber \\
+&+ (\neg c_{i,[i+(n-1)]_n}\land \neg c_{i,[i+(n-2)]_n} \land c_{i,[i+(n-3)]_n})f_{i,[i+(n-3)]_n}^{+} + \cdots  \nonumber \\
+&+ (\neg c_{i,[i+(n-1)]_n}\land \neg c_{i,[i+(n-2)]_n} \land \cdots \land \neg c_{i,[i+(\frac{n}{2}+2)]_n} \land c_{i,[i+(\frac{n}{2}+1)]_n})f_{i, [i + (\frac{n}{2}+1)]_n}^{+}\Bigg) \nonumber \\
+&-\Bigg((c_{i,[i+1]_n})f_{i,[i+1]_n}^{-} + (\lnot c_{i,[i+1]_n} \land c_{i,[i+2]_n})f_{i,[i+2]_n}^{-} \nonumber \\
+&+ (\neg c_{i,[i+1]_n}\land \neg c_{i,[i+2]_n} \land c_{i,[i+3]_n})f_{i,[i+3]_n}^{-} + \cdots \nonumber \\
+&+ (\neg c_{i,[i+1]_n}\land \neg c_{i,[i+2]_n} \land \cdots \land \neg c_{i,[i+(\frac{n}{2}-2)]_n} \land c_{i,[i+(\frac{n}{2}-1)]_n})f_{i, [i + (\frac{n}{2}-1)]_n}^{-}\Bigg),\nonumber \\
+\label{eq:closest}
+\end{alignat}
+where $f_{i,[j]_n}^{+}$ is a positive (clockwise) force and $f_{i,[j]_n}^{-}$ is a negative (counter-clockwise) force.
+We note that $f_{i,[j]_n}^{+}$ appears only when $c_{i,[j]_n} = 1$ and all $c_{i,[k]_n} = 0$, where  $j< k < i + n$. Similary, $f_{i,[j]_n}^{-}$ appears only when $c_{i,[j]_n} = 1$ and all $c_{i,[k]_n} = 0$, where  $i< k < j$.
+
+Then, we convert the logic expression into the algebraic expression. For \textit{logical negation}, $\neg c_{i,[j]_n}$ can be algebraically expressed as $(1 - c_{i,[j]_n})$. For \textit{logical and} ($\land$), we can express algebraically by using multiplication instead. For example, $c_{i,[j]_n} \land c_{i,[k]_n}$ can be expressed as $c_{i,[j]_n}c_{i,[k]_n}$. 
+Therefore, Equation \ref{eq:closest} can be expressed algebraically as the following,
+\begin{alignat}{2}
+&\Bigg((c_{i,[i+(n-1)]_n})f_{i,[i+(n-1)]_n}^{+} + ((1 - c_{i,[i+(n-1)]_n})c_{i,[i+(n-2)]_n})f_{i,[i+(n-2)]_n}^{+} \nonumber \\
+  &+ ((1 - c_{i,[i+(n-1)]_n})(1 -  c_{i,[i+(n-2)]_n})c_{i,[i+(n-3)]_n})f_{i,[i+(n-3)]_n}^{+} + \cdots  \nonumber \\
+  &+ ((1 - c_{i,[i+(n-1)]_n})((1- c_{i,[i+(n-2)]_n}) \cdots (1 - c_{i,[i+(\frac{n}{2}+2)]_n})c_{i,[i+(\frac{n}{2}+1)]_n})f_{i, [i + (\frac{n}{2}+1)]_n}^{+}\Bigg) \nonumber \\
+&-\Bigg((c_{i,[i+1]_n})f_{i,[i+1]_n}^{-} + ((1 - c_{i,[i+1]_n})c_{i,[i+2]_n})f_{i,[i+2]_n}^{-} \nonumber \\
+  &+ ((1 - c_{i,[i+1]_n})(1 -  c_{i,[i+2]_n})c_{i,[i+3]_n})f_{i,[i+3]_n}^{-} + \cdots  \nonumber \\
+  &+ ((1 - c_{i,[i+1]_n})((1- c_{i,[i+2]_n}) \cdots (1 - c_{i,[i+(\frac{n}{2}-2)]_n})c_{i,[i+(\frac{n}{2}-1)]_n})f_{i, [i + (\frac{n}{2}-1)]_n}^{-}\Bigg) \nonumber \\
+  &= \sum_{j=i+(\frac{n}{2}+1)}^{i + (n-1)}f_{i,[j]_n}^{+}c_{i,[j]_n}\prod_{k=1}^{i + n - (j + 1)}(1-c_{i,[i+(n-k)]_n}) - \sum_{j=i+1}^{i + (\frac{n}{2}-1)}f_{i,[j]_n}^{-}c_{i,[j]_n}\prod_{k=1}^{j-1}(1-c_{i,[i+k]_n}).
+\end{alignat}
+
+Let $R_{i,j}^{+}$ be $\prod_{k=1}^{i + n - (j + 1)}(1-c_{i,[i+(n-k)]_n}) \in {0,1}$ and $R_{i,j}^{-}$ be $\prod_{k=1}^{j-1}(1-c_{i,[i+k]_n}) \in {0,1}$. We derive the following form of the closet component to be used in our analysis,
+\begin{alignat}{2}
+\sum_{j=i+(\frac{n}{2}+1)}^{i + (n-1)}f_{i,[j]_n}^{+}c_{i,[j]_n}R_{i,j}^{+} - \sum_{j=i+1}^{i + (\frac{n}{2}-1)}f_{i,[j]_n}^{-}c_{i,[j]_n}R_{i,j}^{-}.
+\end{alignat}
+
+
+\textit{Resistance component}:
+Respect to the node $i$'s point of view, there is a resistance component originated from node $j$ if the following criteria are satisfied:
+\begin{itemize}
+\item Node $i$ perceives the presence of node $j$.
+\item There is at least one node $k$ following node $j$ in the time period ring (in each force direction). 
+\item Node $i$ perceives the presence of node $k$.
+\end{itemize}
+For example, respect to the node $0$'s point of view, if node $1$ is the closest phase neighbor of node $0$ and there is node $2$ following node $1$ in clockwise direction, and node $0$ perceives the presence of both node $1$ and node $2$, then, there is a force difference between node $1$ and node $2$ in the form of $f_{0,1} - f_{0,2}$ (see Chapter \ref{chap:multihop}). The part $f_{0,1}$ is called \textit{resistance} component and the part $f_{0,2}$ is called \textit{absorption} component which we will describe later. We note that, if there is no node following the closest phase neighbor in each direction, there is no resistance and absorption components.
+
+Therefore, we define the resistance component for node $i$ by using the combination of logic and algebraic expression as follows,
+
+\begin{alignat}{2}
+&\Bigg(((c_{i,[i+(n-2)]_n} 
+    \lor c_{i,[i+(n-3)]_n} 
+    \lor \cdots \lor c_{i,[i+(\frac{n}{2} + 1)]_n})
+    \land c_{i,[i+(n-1)]_n}) f_{i,[i+(n-1)]_n}^{+} \nonumber \\
+  &+ ((c_{i,[i+(n-3)]_n} \lor c_{i,[i+(n-4)]_n} 
+    \lor \cdots \lor c_{i,[i+(\frac{n}{2} + 1)]_n})
+    \land c_{i,[i+(n-2)]_n}) f_{i,[i+(n-2)]_n}^{+} \nonumber \\
+  &+ \cdots + ((c_{i,[i+(\frac{n}{2} + 1)]_n})\land c_{i,[i+(\frac{n}{2}+2)]_n})f_{i,[i+(\frac{n}{2}+2)]_n}^{+}\Bigg) \nonumber \\
+&-\Bigg(((c_{i,[i+2]_n} 
+    \lor c_{i,[i+3]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2} - 1)]_n})
+    \land c_{i,[i+1]_n})  f_{i,[i+1]_n}^{-} \nonumber \\
+  &+ ((c_{i,[i+3]_n} \lor c_{i,[i+4]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2} - 1)]_n})
+    \land c_{i,[i+2]_n})  f_{i,[i+2]_n}^{-} \nonumber \\
+  &+ \cdots + ((c_{i,[i+(\frac{n}{2} - 1)]_n}) \land c_{i,[i+(\frac{n}{2}-2)]_n})f_{i,[i+(\frac{n}{2}-2)]_n}^{-}\Bigg).
+\label{eq:logicalor}
+\end{alignat}
+
+Then, we convert the logical expression into the algebraic expression.
+
+Let  $s^{+}(v_{i,k}^+)$ be an \textit{algebraic or} function to represent a \textit{logical or} expression of $(c_{i,[i+(n-k)]_n} \lor c_{i,[i+(n-k-1)]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2}+1)]_n})$, where $v_{i,k}^+ =  c_{i,[i+(\frac{n}{2}+1)]_n}2^{\frac{n}{2}-1-k} + \cdots + c_{i,[i+(n-k-1)]_n}2^{1} + c_{i,[i+(n-k)]_n}2^{0}$. 
+
+Similarly, let $s^{-}(v_{i,k}^-)$ be an algebraic function to represent a \textit{logical or} expression of $(c_{i,[i+k]_n} \lor c_{i,[i+(k+1)]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2}-1)]_n})$, where $v_{i,k}^- = c_{i,[i+(\frac{n}{2}-1)]_n}2^{\frac{n}{2}-1-k} + \cdots + c_{i,[i+(k+1)]_n}2^{1} + c_{i,[i+k]_n}2^{0}$.
+
+We note that, if we write a binary string $c_{i,[i+(\frac{n}{2}+1)]_n} \cdots c_{i,[i+(n-k-1)]_n}c_{i,[i+(n-k)]_n}$, $v_k^+$ is an integer value in base 10 of this binary string where $v_{i,k}^+ \in \lbrace 0,1,\cdots,2^{\frac{n}{2}-k}-1 \rbrace$. If all $c_{i,[j]_n} = 0$, then $v_{i,k}^+ = 0$. The result is similar for $v_{i,k}^-$.
+
+Let $I_A(x)$ be an indicator function as follows,
+\begin{alignat}{2}
+I_A(x) = \begin{cases}1 & \text{if }x \in A \\ 0 & \text{if }x \notin A. \end{cases}
+\label{eq:indicator}
+\end{alignat}
+
+Therefore, $s^+(v_{i,k}^+) = I_{ \mathbb{N} - \lbrace 0 \rbrace}(v_{i,k}^+)$ and $s^-(v_{i,k}^-) = I_{ \mathbb{N} - \lbrace 0 \rbrace}(v_{i,k}^-)$. %(We also can find general forms for $s^+(v_{i,k}^+)$ and $s^-(v_{i,k}^-)$ by using Lagrange interpolation.)
+
+From Equation \ref{eq:logicalor}, we derive the equivalent algebraic expression as follows,
+\begin{alignat}{2}
+&\Bigg(((s^+(v_{i,2}^+))c_{i,[i+(n-1)]_n}) f_{i,[i+(n-1)]_n}^{+} + ((s^+(v_{i,3}^+))c_{i,[i+(n-2)]_n}) f_{i,[i+(n-2)]_n}^{+} \nonumber \\
+  &+ \cdots + ((s^+(v_{i,\frac{n}{2} - 1}^+))c_{i,[i+(\frac{n}{2}+2)]_n})f_{i,[i+(\frac{n}{2}+2)]_n}^{+}\Bigg) \nonumber \\
+&-\Bigg(((s^-(v_{i,2}^-))c_{i,[i+1]_n})  f_{i,[i+1]_n}^{-} + ((s^-(v_{i,3}^-))c_{i,[i+2]_n})  f_{i,[i+2]_n}^{-} \nonumber \\
+  &+ \cdots + ((s^-(v_{i,\frac{n}{2} - 1}^-))c_{i,[i+(\frac{n}{2}-2)]_n})f_{i,[i+(\frac{n}{2}-2)]_n}^{-}\Bigg).
+\end{alignat}
+
+Let $S_{i,j}^{+} = s^+(v_{i,i+n-j+1}^+) \in \lbrace 0,1 \rbrace$ and $S_{i,j}^{-} = s^-(v_{i,j-i+1}^-) \in \lbrace 0,1 \rbrace$. We derive the following form for the resistance component to be used in our analysis,
+\begin{alignat}{2}
+\sum_{j=i+(\frac{n}{2}+2)}^{i + (n-1)}f_{i,[j]_n}^{+}c_{i,[j]_n}S_{i,j}^{+} - \sum_{j=i+1}^{i + (\frac{n}{2}-2)}f_{i,[j]_n}^{-}c_{i,[j]_n}S_{i,j}^{-}.
+\end{alignat}
+
+\textit{Absorption component}:  
+Respect to the node $i$'s point of view, there is an absorption component originated from node $j$ if the following criteria are satisfied:
+\begin{itemize}
+\item Node $i$ perceives the presence of node $j$.
+\item There is at least one node $k$ stays between node $i$ and node $j$ in the time period ring (in each force direction). 
+\item Node $i$ perceives the presence of node $k$.
+\end{itemize}
+
+Therefore, we define the absorption component for node $i$ by using the combination of logic and algebraic expression as follows,
+
+\begin{alignat}{2}
+&\Bigg(((c_{i,[i+(n-1)]_n})
+    \land c_{i,[i+(n-2)]_n}) f_{i,[i+(n-2)]_n}^{+} \nonumber \\
+  &+ ((c_{i,[i+(n-1)]_n} \lor c_{i,[i+(n-2)]_n})
+    \land c_{i,[i+(n-3)]_n}) f_{i,[i+(n-3)]_n}^{+} \nonumber \\
+  &+ \cdots + ((c_{i,[i+(n-1)]_n} \lor c_{i,[i+(n-2)]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2} + 2)]_n})\land c_{i,[i+(\frac{n}{2}+1)]_n})f_{i,[i+(\frac{n}{2}+1)]_n}^{+}\Bigg) \nonumber \\
+&-\Bigg(((c_{i,[i+1]_n})
+    \land c_{i,[i+2]_n})  f_{i,[i+2]_n}^{-} \nonumber \\
+  &+ ((c_{i,[i+1]_n} \lor c_{i,[i+2]_n})
+    \land c_{i,[i+3]_n})  f_{i,[i+3]_n}^{-} \nonumber \\
+  &+ \cdots + ((c_{i,[i+1]_n} \lor c_{i,[i+2]_n} \lor \cdots \lor c_{i,[i+(\frac{n}{2} - 2)]_n}) \land c_{i,[i+(\frac{n}{2}-1)]_n})f_{i,[i+(\frac{n}{2}-1)]_n}^{-}\Bigg).
+\label{eq:logicalor2}
+\end{alignat}
+
+Based on the same procedure deriving the resistance component, we derive the following form for the absorption component to be used in our analysis,
+\begin{alignat}{2}
+\sum_{j=i+(\frac{n}{2}+1)}^{i + (n-2)}f_{i,[j]_n}^{+}c_{i,[j]_n}T_{i,j}^{+} - \sum_{j=i+2}^{i + (\frac{n}{2}-1)}f_{i,[j]_n}^{-}c_{i,[j]_n}T_{i,j}^{-},
+\end{alignat}
+
+where $T_{i,j}^+$ and $T_{i,j}^-$ are the algebraic expressions of the \textit{logical or} terms in Equation \ref{eq:logicalor2}.
+
+Therefore, respect to the node $i$'s point of view, the total force at node $i$ is as follows,
+\begin{alignat}{2}
+F_i &= \left ( \sum_{j= i + (\frac{n}{2} + 1)}^{i+(n-1)}  f_{i,[j]_n}^{+}c_{i,[j]_n}R_{i,j}^+ + \sum_{j= i + (\frac{n}{2} + 2)}^{i+(n-1)}  f_{i,[j]_n}^{+}c_{i,[j]_n}S_{i,j}^+ - \sum_{j= i + (\frac{n}{2} + 1)}^{i+(n-2)}  f_{i,[j]_n}^{+}c_{i,[j]_n}T_{i,j}^+\right) \nonumber \\
+&- \left ( \sum_{j= i + 1}^{i+(\frac{n}{2}-1)}  f_{i,[j]_n}^{-}c_{i,[j]_n}R_{i,j}^- + 
+\sum_{j= i + 1}^{i+(\frac{n}{2}-2)}  f_{i,[j]_n}^{-}c_{i,[j]_n}S_{i,j}^- -
+\sum_{j= i + 2}^{i+(\frac{n}{2}-1)}  f_{i,[j]_n}^{-}c_{i,[j]_n}T_{i,j}^- \right).
+\label{eq:algebraforce}
+\end{alignat}
+
+In the next section, we analyse the stability of the M-DWARF algorithm based on the derived total force.
+
+
+\section{Stability Analysis}
+As same as the analysis of single-hop networks, to prove that the system is stable, we begin by transforming the system into a non-linear dynamic system. 
+
+Let $f_{i,j}^{+}$ and $f_{i,j}^{-}$ be the positive and negative forces from node $j$ to node $i$ respectively,
+\begin{alignat}{2}
+f_{i,j}^{+} = \frac{T}{\sum_{k=j}^{i-1}\Delta_{[k]_n}} \text{ and } f_{i,j}^{-} = \frac{T}{\sum_{k=i}^{j-1}\Delta_{[k]_n}},  
+\end{alignat}
+where $\Delta_k \in (0, T]$ is the phase difference between node $[k + 1]_n$ and node $k$.
+
+From Equation \ref{eq:algebraforce}, the total force at node $i$ is
+\begin{alignat}{2}
+F_i &= \left ( \sum_{j= i + (\frac{n}{2} + 1)}^{i+(n-1)}  f_{i,[j]_n}^{+}c_{i,[j]_n}R_{i,j}^+ + \sum_{j= i + (\frac{n}{2} + 2)}^{i+(n-1)}  f_{i,[j]_n}^{+}c_{i,[j]_n}S_{i,j}^+ - \sum_{j= i + (\frac{n}{2} + 1)}^{i+(n-2)}  f_{i,[j]_n}^{+}c_{i,[j]_n}T_{i,j}^+\right) \nonumber \\
+&- \left ( \sum_{j= i + 1}^{i+(\frac{n}{2}-1)}  f_{i,[j]_n}^{-}c_{i,[j]_n}R_{i,j}^- + 
+\sum_{j= i + 1}^{i+(\frac{n}{2}-2)}  f_{i,[j]_n}^{-}c_{i,[j]_n}S_{i,j}^- -
+\sum_{j= i + 2}^{i+(\frac{n}{2}-1)}  f_{i,[j]_n}^{-}c_{i,[j]_n}T_{i,j}^- \right).
+\end{alignat}
+
+
+Let $\Delta_i$ be the current phase difference between node $[i+1]_n$ and node $i$ and $\Delta_i'$ be the phase difference between node $[i+1]_n$ and node $i$ in the next time period.  The dynamic system of a multi-hop network running the M-DWARF algorithm is as follows: 
+
+\begin{alignat}{2}
+\Delta_0' &= \Delta_{0} + KF_{1} - KF_0 \nonumber \\
+\Delta_1' &= \Delta_{1} + KF_{2} - KF_1 \nonumber \\
+\vdots \nonumber \\
+\Delta_{n-1}' &= \Delta_{n-1} + KF_{0} - KF_{n-1}
+\end{alignat}
+
+We write the transition of $\Delta_i$ in a general form as the following,
+\begin{alignat}{2}
+\Delta_i' = \Delta_{i} + KF_{[i+1]_n} - KF_i. 
+\label{eq:transition}
+\end{alignat}
+
+Then, we linearly approximate the dynamic system at the equilibrium.
+
+\subsection{Linear Approximation}
+The Jacobian ($J$) of a difference equations system is defined as follows:
+
+\begin{alignat}{2}
+J=\begin{pmatrix} 
+\frac{\partial \Delta_{0}'}{\partial \Delta_{0}}  & \frac{\partial \Delta_{0}'}{\partial \Delta_{1}}  & \cdots & \frac{\partial \Delta_{0'}}{\partial \Delta_{n-1}} \\ 
+\frac{\partial \Delta_{1}'}{\partial \Delta_{0}}  & \frac{\partial \Delta_{1}'}{\partial \Delta_{1}}   & \cdots & \frac{\partial \Delta_{1}'}{\partial \Delta_{n-1}} \\ 
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial \Delta_{n-1}'}{\partial \Delta_{0}}  & \frac{\partial \Delta_{n-1}'}{\partial \Delta_{1}} & \cdots &  \frac{\partial \Delta_{n-1}'}{\partial \Delta_{n-1}}
+\end{pmatrix}
+\end{alignat}
+
+Therefore, from Equation \ref{eq:transition}, each element in a row of Jacobian is
+\begin{alignat}{2}
+\frac{\partial \Delta_i'}{\partial \Delta_p} = \frac{\partial\Delta_{i}}{\partial \Delta_p} + K\frac{\partial F_{[i+1]_n}}{\partial \Delta_p} - K\frac{\partial F_i}{\partial \Delta_p}, p \in \{0,1,\cdots,n-1\}.
+\label{eq:element}
+\end{alignat}
+
+For the first term, $\frac{\partial\Delta_{i}}{\partial \Delta_p}$ is 1 if $p = i$. . If $p \neq i$, this term is zero. Formally,
+\begin{alignat}{2}
+\frac{\partial\Delta_{i}}{\partial \Delta_p} = \begin{cases}1 & \text{if }p = i \\ 0 & \text{otherwise.}\end{cases}
+\label{eq:diffdelta}
+\end{alignat}
+
+Then, we find $\frac{\partial F_i}{\partial \Delta_p}$ as follows:
+
+\begin{alignat}{2}
+\frac{\partial F_i}{\partial \Delta_i} =& \text{ }T \Bigg( \sum_{j= i + 2}^{i+(\frac{n}{2}-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=i}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+    &+ \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \nonumber \\
+    &+ \frac{c_{i,[i+1]_n}(R_{i,i+1} + S_{i,i+1})}{(\Delta_i)^2} \Bigg) \nonumber \\
+\frac{\partial F_i}{\partial \Delta_{[m]_n}} =& \text{ }T \Bigg( \sum_{j= m + 1}^{i+(\frac{n}{2}-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=i}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \Bigg), \nonumber \\
+   &\text{for } m = i+1, i+2, \cdots, i + (\frac{n}{2} - 3) \nonumber \\
+ \frac{\partial F_i}{\partial \Delta_{[i+(\frac{n}{2}-2)]_n}} =& \text{ } T \Bigg( \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \Bigg) \nonumber \ \\
+\frac{\partial F_i}{\partial \Delta_{[m]_n}} =& \text{ }0, \text{ for } m = i + (\frac{n}{2} - 1), i + \frac{n}{2} \nonumber \\
+\frac{\partial F_i}{\partial \Delta_{[i+(\frac{n}{2}+1)]_n}} =& \text{ } T \Bigg( - \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+%\text{For } m = i+(\frac{n}{2}+2), i+(\frac{n}{2}+3), \cdots, i + (n-2), \nonumber \\
+\frac{\partial F_i}{\partial \Delta_{[m]_n}} =& \text{ }T \Bigg(- \sum_{j= i + (\frac{n}{2}+2)}^{m}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=j}^{i-1}\Delta_{[k]_n})^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \Bigg), \nonumber \\
+ &\text{for } m = i+(\frac{n}{2}+2), i+(\frac{n}{2}+3), \cdots, i + (n-2) \nonumber \\
+\frac{\partial F_i}{\partial \Delta_{[i+(n-1)]_n}} =& \text{ }T \Bigg(- \sum_{j= i + (\frac{n}{2}+ 2)}^{i+(n-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=j}^{i-1}\Delta_{[k]_n})^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{i,[i+(n-1)]_n}(R_{i,i+(n-1)} + S_{i,i+(n-1)})}{(\Delta_{[i+(n-1)]_n})^2} \Bigg).
+\label{eq:difffi}
+\end{alignat}
+
+For $\frac{\partial F_{[i+1]_n}}{\partial \Delta_p}$, we can find by replacing $i$ with $i+1$ in Equation \ref{eq:difffi}. The result is as follows:
+
+\begin{alignat}{2}
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{[i+1]_n}} =& \text{ }T \Bigg( \sum_{j= i+3}^{i+(\frac{n}{2}-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=i+1}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+2]_n}(R_{i+1,i+2} + S_{i+1,i+2})}{(\Delta_{[i+1]_n})^2} \Bigg) \nonumber \\
+%\text{For } m = i+2, i+3, \cdots, i+ (\frac{n}{2} - 2), \nonumber \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{[m]_n}} =& \text{ }T \Bigg( \sum_{j= m + 1}^{i+(\frac{n}{2}-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=i+1}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \Bigg), \nonumber \\
+ &\text{for } m = i+2, i+3, \cdots, i+ (\frac{n}{2} - 2) \nonumber \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{i+(\frac{n}{2}-1)}} =& \text{ } T \Bigg( \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \Bigg) \nonumber \ \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_[m]_n} =& \text{ }0, \text{ for } m = i+ \frac{n}{2}, i+( \frac{n}{2} + 1) \nonumber \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{[i+(\frac{n}{2}+2)]_n}} =& \text{ } T \Bigg( - \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{[m]_n}} =& \text{ }T \Bigg(- \sum_{j= i+ (\frac{n}{2}+3)}^{m}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=j}^{i}\Delta_{[k]_n})^2} \nonumber \\
+&- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \Bigg), \nonumber \\
+&\text{for } m = i+(\frac{n}{2}+3), i+(\frac{n}{2}+4), \cdots, i+ (n-1) \nonumber \\
+\frac{\partial F_{[i+1]_n}}{\partial\Delta_{i}} =& \text{ }T \Bigg(- \sum_{j= i + (\frac{n}{2}+ 3)}^{i+(n-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=j}^{i}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{[i+1]_n,i}(R_{i+1,i} + S_{i+1,i})}{(\Delta_{i})^2} \Bigg).
+\label{eq:difffiplus1}
+\end{alignat}
+
+
+Consequently, from Equation \ref{eq:element}, \ref{eq:diffdelta}, \ref{eq:difffi}, and \ref{eq:difffiplus1}, we find $\frac{\partial \Delta_i'}{\partial \Delta_p}$ as the following:
+\begin{alignat}{2}
+\frac{\partial \Delta_i'}{\partial \Delta_i} =& \text{ }1 + KT \Bigg(- \sum_{j= i + (\frac{n}{2}+ 3)}^{i+(n-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=j}^{i}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{[i+1]_n,i}(R_{i+1,i} + S_{i+1,i})}{(\Delta_{i})^2} \nonumber \\
+ &- \sum_{j= i + 2}^{i+(\frac{n}{2}-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=i}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{i,[i+1]_n}(R_{i,i+1} + S_{i,i+1})}{(\Delta_i)^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+1]_n}} =& \text{ }KT \Bigg(\sum_{j= i+3}^{i+(\frac{n}{2}-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=i+1}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+2]_n}(R_{i+1,i+2} + S_{i+1,i+2})}{(\Delta_{[i+1]_n})^2} \nonumber \\
+ &- \sum_{j= i + 2}^{i+(\frac{n}{2}-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=i}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,[i+(\frac{n}{2}-1)]_n} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+%\text{For }  m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3), \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }KT \Bigg(\sum_{j= m+1}^{i+(\frac{n}{2}-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=i+1}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+ &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \nonumber \\
+ &- \sum_{j= m+1}^{i+(\frac{n}{2}-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=i}^{j-1}\Delta_{[k]_n})^2} \nonumber \\
+ &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2}, \Bigg), \nonumber \\
+ &\text{for } m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}-2)]_n}} =& \text{ }KT \Bigg( \frac{c_{[i+1]_n,[i+(\frac{n}{2}-1)]_n}(R_{i+1,i+(\frac{n}{2}-1)} + S_{i+1,i+(\frac{n}{2}-1)} - T_{i+1,i+(\frac{n}{2}-1)})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \nonumber \\
+ &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\sum_{k=i}^{i+(\frac{n}{2}-2)}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{i+(\frac{n}{2}-1)}} =& \text{ } KT \Bigg( \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\sum_{k=i+1}^{i+(\frac{n}{2}-1)}\Delta_{[k]_n})^2} \Bigg) \nonumber \ \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+\frac{n}{2}]_n}} =& \text{ }0 \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}+1)]_n}} =& \text{ } KT \Bigg( \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{i+(\frac{n}{2}+2)}} =& \text{ }KT \Bigg( - \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \nonumber \\
+ &+ \frac{c_{i,[i+(\frac{n}{2}+2)]_n}(R_{i,i+(\frac{n}{2}+2)} + S_{i,i+(\frac{n}{2}+2)} - T_{i,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+(n-1)}\Delta_{[k]_n})^2} \nonumber \\
+ &+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }KT \Bigg(- \sum_{j= i + (\frac{n}{2}+3)}^{m}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=j}^{i}\Delta_{[k]_n})^2} \nonumber \\
+&- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \nonumber \\
+&+\sum_{j= i + (\frac{n}{2}+2)}^{m}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=j}^{i+(n-1)}\Delta_{[k]_n})^2} \nonumber \\
+&+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2}\Bigg), \nonumber \\
+&\text{for } m = i+(\frac{n}{2}+3), i+(\frac{n}{2}+4), \cdots, i + (n-2) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(n-1)]_n}} =& \text{ }KT \Bigg(- \sum_{j= i + (\frac{n}{2}+ 3)}^{i+(n-1)}  \frac{c_{[i+1]_n,[j]_n}(R_{i+1,j} + S_{i+1,j} - T_{i+1,j})}{(\sum_{k=j}^{i}\Delta_{[k]_n})^2} \nonumber \\
+&- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\sum_{k=i+(\frac{n}{2}+2)}^{i+n}\Delta_{[k]_n})^2} \nonumber \\
+&+\sum_{j= i + (\frac{n}{2}+2)}^{i+(n-2)}  \frac{c_{i,[j]_n}(R_{i,j} + S_{i,j} - T_{i,j})}{(\sum_{k=j}^{i+(n-1)}\Delta_{[k]_n})^2} \nonumber \\
+&+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\sum_{k=i+(\frac{n}{2}+1)}^{i+(n-1)}\Delta_{[k]_n})^2} \nonumber \\
+ &+ \frac{c_{i,[i+(n-1)]_n}(R_{i,i+(n-1)} + S_{i,i+(n-1)})}{(\Delta_{[i+(n-1)]_n})^2} \Bigg).
+\label{eq:jacobiandiff}
+\end{alignat}
+
+At this point, we already get the general form of each row of the Jacobian matrix. To locally approximate at the equilibrium, we have to substitute $c_{i,j}, R_{i,j}, S_{i,j}, T_{i,j}$, and $\Delta_i$ for all $i,j \in {0, 1, \cdots, n-1}$ where $j \neq i$ with the value at the equilibrium state. Then, we have find the maximum value of $n$ that bounds the eigenvalues within a unit circle to guarantee the stability. However, such values depend on the topology. For example, the connectivity $c_{i,j}$ depends on whether node $i$ can perceive the presence of node $j$ or not. If node $i$ and $j$ are within two-hop communication, this value is 1, otherwise, this value is 0.
+
+In this dissertation, we prove the stability of the multi-hop star topology as an example because this topology is less complicated to prove and may be the easiest example for the reader to follow the proof. For other topologies, we conjecture that the local stability can also be assured as well.
+
+For the multi-hop star topology, the time interval between arbitrary two consecutive nodes is $T/n$ at the equilibrium. Therefore, each row of the Jacobian matrix from Equation \ref{eq:jacobiandiff} is changed by substituting all $\Delta_{k}$ with $T/n$ and re-indexing the summation as follows,
+
+\begin{alignat}{2}
+\frac{\partial \Delta_i'}{\partial \Delta_i} =& \text{ }1 + \frac{Kn^2}{T} \Bigg(
+  - \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &- \frac{c_{[i+1]_n,[i]_n}(R_{i+1,i} + S_{i+1,i})}{1^2} \nonumber \\
+  &- \sum_{j=2}^{\frac{n}{2}-2}  \frac{c_{[i+1]_n,[i+(n+1-j)]_n}(R_{i+1,i+(n+1-j)} + S_{i+1,i+(n+1-j)} - T_{i+1,i+(n+1-j)})}{j^2} \nonumber \\
+  &- \sum_{j= 2}^{\frac{n}{2}-2}  \frac{c_{i,[i+j]_n}(R_{i,i+j} + S_{i,i+j} - T_{i,i+j})}{j^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &- \frac{c_{i,[i+1]_n}(R_{i,i+1} + S_{i,i+1})}{1^2} \Bigg)\nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+1]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(\sum_{j=2}^{\frac{n}{2}-2}  \frac{c_{[i+1]_n,[i+1+j]_n}(R_{i+1,i+1+j} + S_{i+1,i+1+j} - T_{i+1,i+1+j})}{j^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+2]_n}(R_{i+1,i+2} + S_{i+1,i+2})}{1^2} \nonumber \\
+  &- \sum_{j= 2}^{\frac{n}{2}-2}  \frac{c_{i,[i+j]_n}(R_{i,i+j} + S_{i,i+j} - T_{i,i+j})}{j^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \\
+%\text{For }  m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3), \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(\sum_{j= m-i}^{\frac{n}{2}-2}  \frac{c_{[i+1]_n,[i+1+j]_n}(R_{i+1,i+1+j} + S_{i+1,i+1+j} - T_{i+1,i+1+j})}{j^2} \nonumber \\
+  &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &- \sum_{j= m-i+1}^{\frac{n}{2}-2}  \frac{c_{i,[i+j]_n}(R_{i,i+j} + S_{i,i+j} - T_{i,i+j})}{j^2} \nonumber \\
+  &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \\
+  &\text{for } m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}-2)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg( \frac{c_{[i+1]_n,[i+(\frac{n}{2}-1)]_n}(R_{i+1,i+(\frac{n}{2}-1)} + S_{i+1,i+(\frac{n}{2}-1)} - T_{i+1,i+(\frac{n}{2}-1)})}{(\frac{n}{2}-2)^2} \nonumber \\
+ &+ \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\frac{n}{2}-1)^2} \nonumber \\
+ &- \frac{c_{i,[i+(\frac{n}{2}-1)]_n}(R_{i,i+(\frac{n}{2}-1)} - T_{i,i+(\frac{n}{2}-1)})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}-1)]_n}} =& \text{ } \frac{Kn^2}{T} \Bigg( \frac{c_{[i+1]_n,[i+\frac{n}{2}]_n}(R_{i+1,i+\frac{n}{2}} - T_{i+1,i+\frac{n}{2}})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \ \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+\frac{n}{2}]_n}} =& \text{ }0 \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}+1)]_n}} =& \text{ } \frac{Kn^2}{T} \Bigg( \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}+2)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg( - \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &+ \frac{c_{i,[i+(\frac{n}{2}+2)]_n}(R_{i,i+(\frac{n}{2}+2)} + S_{i,i+(\frac{n}{2}+2)} - T_{i,i+(\frac{n}{2}+2)})}{(\frac{n}{2}-2)^2} \nonumber \\
+  &+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\frac{n}{2}-1)^2} \Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &- \sum_{j= i + n -m + 1}^{\frac{n}{2}-2}  \frac{c_{[i+1]_n,[j-\frac{n}{2}+2+m]_n}(R_{i+1,j-\frac{n}{2}+2+m} + S_{i+1,j-\frac{n}{2}+2+m} - T_{i+1,j-\frac{n}{2}+2+m})}{j^2} \nonumber \\
+  &+ \sum_{j= i + n - m}^{\frac{n}{2}-2}  \frac{c_{i,[j-\frac{n}{2}+2+m]_n}(R_{i,j-\frac{n}{2}+2+m} + S_{i,j-\frac{n}{2}+2+m} - T_{i,j-\frac{n}{2}+2+m})}{j^2} \nonumber \\
+  &+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\frac{n}{2}-1)^2}\Bigg), \nonumber \\
+  &\text{for } m = i+(\frac{n}{2}+3), i+(\frac{n}{2}+4), \cdots, i + (n-2) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(n-1)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(- \frac{c_{[i+1]_n,[i+(\frac{n}{2}+2)]_n}(R_{i+1,i+(\frac{n}{2}+2)} - T_{i+1,i+(\frac{n}{2}+2)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &- \sum_{j= 2}^{\frac{n}{2}-2}  \frac{c_{[i+1]_n,[i+\frac{n}{2}+1+j]_n}(R_{i+1,i+\frac{n}{2}+1+j} + S_{i+1,i+\frac{n}{2}+1+j} - T_{i+1,i+\frac{n}{2}+1+j})}{j^2} \nonumber \\
+  &+ \sum_{j=2}^{\frac{n}{2}-2}  \frac{c_{i,[i+\frac{n}{2}+j]_n}(R_{i,i+\frac{n}{2}+j} + S_{i,i+\frac{n}{2}+j} - T_{i,i+\frac{n}{2}+j})}{j^2} \nonumber \\
+  &+ \frac{c_{i,[i+(\frac{n}{2}+1)]_n}(R_{i,i+(\frac{n}{2}+1)} - T_{i,i+(\frac{n}{2}+1)})}{(\frac{n}{2}-1)^2} \nonumber \\
+  &+ \frac{c_{i,[i+(n-1)]_n}(R_{i,i+(n-1)} + S_{i,i+(n-1)})}{1^2} \Bigg) \nonumber.
+\label{eq:startndiff}
+\end{alignat}
+
+Then, for the star topology, nodes perceive the presence of all two-hop neighbors. Therefore, all terms $c_{i,j}, R_{i,j}, S_{i,j}$, and $T_{i,j}$ are 1. Consequently, the row of the Jacobian matrix at the equilibrium is the following: 
+
+\begin{alignat}{2}
+\frac{\partial \Delta_i'}{\partial \Delta_i} =& \text{ }1 + \frac{Kn^2}{T} \Bigg(- \sum_{j=2}^{\frac{n}{2}-2}  \frac{1}{j^2} - 0 - \frac{2}{1^2} - \sum_{j= 2}^{\frac{n}{2}-2}  \frac{1}{j^2} - 0 - \frac{2}{1^2} \Bigg) \nonumber \\
+  &= 1 - \frac{2Kn^2}{T}\Bigg(1 + \sum_{j=1}^{n-2}\frac{1}{j^2}\Bigg) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+1]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(\sum_{j=2}^{\frac{n}{2}-2}  \frac{1}{j^2} + 0 + 2 - \sum_{j= 2}^{\frac{n}{2}-2}  \frac{1}{j^2}- 0 \Bigg) = \frac{2Kn^2}{T} \nonumber \\
+%\text{For }  m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3), \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(\sum_{j= m-i}^{\frac{n}{2}-2}  \frac{1}{j^2} + 0 - \sum_{j= m-i+1}^{\frac{n}{2}-2}  \frac{1}{j^2} - 0 \Bigg) = \frac{Kn^2}{T(m-i)^2} \nonumber \\
+  &\text{for } m = i+2, i+3, \cdots, i + (\frac{n}{2} - 3) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}-2)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg( \frac{1}{(\frac{n}{2}-2)^2} + 0 - 0 \Bigg) = \frac{Kn^2}{T(\frac{n}{2}-2)^2} \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}-1)]_n}} =& \text{ }0 \nonumber \ \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+\frac{n}{2}]_n}} =& \text{ }0 \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}+1)]_n}} =& \text{ } 0 \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(\frac{n}{2}+2)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg( - 0 + \frac{1}{(\frac{n}{2}-2)^2} + 0 \Bigg) =  \frac{Kn^2}{T(\frac{n}{2}-2)^2} \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[m]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(- \sum_{j= i + n -m + 1}^{\frac{n}{2}-2}  \frac{1}{j^2} - 0 + \sum_{j= i + n - m}^{\frac{n}{2}-2}  \frac{1}{j^2} + 0 = \frac{Kn^2}{T(i+n-m)^2}, \nonumber \\
+  &\text{ for } m = i+(\frac{n}{2}+3), i+(\frac{n}{2}+4), \cdots, i + (n-2) \nonumber \\
+\frac{\partial \Delta_i'}{\partial \Delta_{[i+(n-1)]_n}} =& \text{ }\frac{Kn^2}{T} \Bigg(- \sum_{j= 2}^{\frac{n}{2}-2}  \frac{1}{j^2} - 0 + \sum_{j=2}^{\frac{n}{2}-2}  \frac{1}{j^2} + 0 + \frac{2}{1^2} \Bigg) = \frac{2Kn^2}{T}. 
+\label{eq:starcrstdiff}
+\end{alignat}
+
+The result of the Jacobian matrix at the equilibrium is the circulant matrix as shown below:
+
+\setcounter{MaxMatrixCols}{11}
+\begin{alignat}{2}
+\begin{pmatrix} 
+D_0 & 2A  & \cdots & \frac{A}{(\frac{n}{2}-2)^2} & 0 & 0 & 0 & \frac{A}{(\frac{n}{2}-2)^2} & \cdots  & \frac{A}{2^2} & 2A \\
+2A & D_0 & \cdots & \frac{A}{(\frac{n}{2}-3)^2} & \frac{A}{(\frac{n}{2}-2)^2} & 0 & 0 & 0  & \cdots & \frac{A}{3^2} & \frac{A}{2^2} \\
+\vdots & \vdots &  \ddots &  \vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+\frac{A}{(\frac{n}{2}-2)^2} & \frac{A}{(\frac{n}{2}-3)^2} & \cdots & D_0 & 2A & \frac{A}{2^2} & \frac{A}{3^2} & \frac{A}{4^2} & \cdots & 0 & 0  \\
+0 & \frac{A}{(\frac{n}{2}-2)^2} & \cdots  & 2A & D_0 & 2A & \frac{A}{2^2} & \frac{A}{3^2} & \cdots & 0 & 0 \\
+0 & 0 & \cdots  & \frac{A}{2^2} & 2A & D_0 & 2A & \frac{A}{2^2} & \cdots & \frac{A}{(\frac{n}{2}-2)^2} & 0  \\
+0 & 0  & \cdots  & \frac{A}{3^2} & \frac{A}{2^2} & 2A & D_0 & 2A &  \cdots & \frac{A}{(\frac{n}{2}-3)^2} & \frac{A}{(\frac{n}{2}-2)^2}  \\
+\frac{A}{(\frac{n}{2}-2)^2} & 0  & \cdots  & \frac{A}{4^2} & \frac{A}{3^2} & \frac{A}{2^2} & 2A &  D_0 &  \cdots & \frac{A}{(\frac{n}{2}-4)^2} & \frac{A}{(\frac{n}{2}-3)^2}  \\
+\vdots & \vdots & \ddots &  \vdots & \vdots & \vdots &  \vdots & \vdots &  \ddots  &  \vdots & \vdots\\
+\frac{A}{2^2} &  \frac{A}{3^2} &\cdots & 0 & 0 & \frac{A}{(\frac{n}{2}-2)^2} & \frac{A}{(\frac{n}{2}-3)^2} & \frac{A}{(\frac{n}{2}-3)^2} & \cdots & D_0 & 2A\\
+2A & \frac{A}{2^2}  & \cdots & 0 & 0 & 0 & \frac{A}{(\frac{n}{2}-2)^2}& \frac{A}{(\frac{n}{2}-3)^2} & \cdots  & 2A & D_0
+\end{pmatrix},
+\end{alignat}
+
+where the diagonal entry $D_0 = 1 - 2A\Bigg(1 + \sum_{j=1}^{n-2}1/j^2\Bigg)$ and $A=Kn^2/T$.
+
+We can find each eigenvalue of a circulant matrix with a general solution presented in \cite{circulant}. However, we only need to guarantee that all eigenvalues lay on a unit circle. Therefore, we find the bound of eigenvalues instead.
+
+\subsection{The Bound of Eigenvalues}
+\label{sec:bound-mhop}
+To find the bound of an $n \times n$ matrix, we use the Gershgorin's Circle Theorem (\cite{gersh_eng, gersh_ger}).
+
+\begin{thm}[Gershgorin’s Theorem Round 1]
+Every eigenvalue $\lambda$ of $n \times n$ matrix $A$ satisfies:
+
+\begin{alignat}{2}
+|\lambda - A_{i,i}| \leq \sum_{j \neq i} |A_{i,j}|, \text{ } i \in {0,1,\cdots, n-1} \nonumber
+\end{alignat}
+\end{thm}
+
+In other words, every eigenvalue lies within at least one of Gershgorin discs centered at $A_{i,i}$ with radius $\sum_{j \neq i} |A_{i,j}|$, where $A_{i,i}$ is the diagonal entry of a matrix.
+
+In our circulant matrix, all diagonal entries and the sums of elements in each row and each column are the same. Therefore, in our matrix, all Gershgorin's discs are centered at $D_0 = 1 - 2A(1 + \sum_{j=1}^{n-2}1/j^2)$ with radius $r = 2A(1 + \sum_{j=1}^{\frac{n}{2}-2}1/j^2)$, where $A = Kn^2/T$.
+
+Then, we find the maximum number of nodes $n$ that guarantees the Gershgorin' discs are in a unit circle.
+
+Let $\vec{D}$ be a vector drawn from the origin $(0,0)$ to the center of the Gershgorin's disc $(1 - 2A(1 + \sum_{j=1}^{n-2}1/j^2), 0)$. Due to the imaginary part of $\vec{D}$ is zero, the magnitude $|\vec{D}|$ is $|1 - 2A(1 + \sum_{j=1}^{n-2}1/j^2|$. Therefore, we derive the following to guarantee the Gershgorin's discs are in a unit circle:
+
+\begin{alignat}{2}
+|\vec{D}| + r \leq& \text{ } 1 \nonumber \\
+\Bigg|1 - 2A\Bigg(1 + \sum_{j=1}^{n-2}\frac{1}{j^2}\Bigg)\Bigg| + 2A\Bigg(1 + \sum_{j=1}^{\frac{n}{2}-2}\frac{1}{j^2}\Bigg) \leq& \text{ } 1 \nonumber \\
+\Bigg|1 - \frac{2Kn^2}{T}\Bigg(1 + \sum_{j=1}^{n-2}\frac{1}{j^2}\Bigg)\Bigg| + \frac{2Kn^2}{T}\Bigg(1 + \sum_{j=1}^{\frac{n}{2}-2}\frac{1}{j^2}\Bigg) \leq& \text{ } 1.
+\label{eq:disc}
+\end{alignat}
+
+From the M-DWARF algorithm, we substitute $K$ with $38.597 \times n^{-1.874} \times T/1000$. Additionally, when $n$ is large, the value of $\sum_{j=1}^{n-2} 1/j^2$ and $\sum_{j=1}^{\frac{n}{2}-2}1/j^2$ converge to the Reimann zeta function $\zeta (2) = \sum_{i=1}^{\infty}1/i^2 = \pi^2/6 \approx 1.645$. From Equation \ref{eq:disc}, we get the following:
+
+\begin{alignat}{2}
+\Bigg|1 - 0.077194n^{0.126}(1+ 1.645)\Bigg| +0.077194n^{0.126}(1+1.645) &\leq \text{ } 1 \nonumber \\
+\Bigg|1 - 0.20417813n^{0.126}\Bigg| + 0.20417813n^{0.126} &\leq \text{ } 1 \nonumber \\
+- (1 - 0.20417813n^{0.126}) \leq 1 - 0.20417813n^{0.126}  &\leq \text{ } 1 - 0.20417813n^{0.126}\nonumber \\
+\end{alignat}
+
+The condition $1 - 0.20417813n^{0.126}  \leq \text{ } 1 - 0.20417813n^{0.126}$ is always true regardless of the number of nodes $n$. Then, we consider the following condition:
+\begin{alignat}{2}
+- (1 - 0.20417813n^{0.126}) &\leq 1 - 0.20417813n^{0.126} \nonumber \\
+2(0.20417813n^{0.126} - 1) &\leq 0 \nonumber \\
+n^{0.126}  &\leq \frac{1}{0.20417813} \nonumber \\
+n  &\leq 299,307 \nonumber \\
+\end{alignat} 
+
+Therefore, if the number of nodes is less than $2.99 \times 10^5$ nodes, every eigenvalue is guaranteed to lay in a unit circle. In other words, the non-linear dynamic system for the multi-hop star topology is locally stable at the equilibrium.
+If there is a small perturbation around the equilibrium, the system is able to converge back to the equilibrium.
+
+To prove the stability of other topologies, we can substitute $\Delta_i$ and $c_{i,j}$ in the Jacobian matrix with the value at the equilibrium of each topology. Then, finding the eigenvalues of the substituted Jacobian matrix. If we can bound that every eigenvalue lies in a unit circle, the algorithm is locally stable for such topologies. We conjecture that the proof of other topologies is similar to the proof of the star topology with the similar procedure.
+ 
+\section{Summary}
+In this chapter, we analyse the stability of M-DWARF, a multi-hop physicomimetics desynchronization algorithm. 
+We transform the system into a dynamic system and locally analyse at the equilibrium. 
+However, to find eigenvalues to guarantee stability depends on connectivity and topology. 
+In this dissertation, we derive the Jacobian to be used for a general topology and provide an in-depth stability proof by bounding eigenvalues for multi-hop star topology as an instance. We conjecture that, with a similar proof, the proposed algorithm is also stable for other multi-hop topologies at the equilibrium as well.
+
+
+

@@ -1,0 +1,105 @@
+\chapter{Introduction}
+Wireless Sensor Networks (WSNs)  have been rapidly growing and enabling several new approaches to collect environmental data such as works of \cite{habitat}, \cite{surveillance}, \cite{structure}, \cite{energy}, and \cite{senvm}.
+Such data, in particular event data, often associate with timestamps used for  sequencing chronological  order of events.
+Therefore, many WSN systems usually require sensor nodes to cooperate to have a common notion of time in order to accomplish tasks with consistent results.
+Several protocols have been proposed to distributedly synchronize the notion of time among sensor nodes in the systems (\textit{e.g.}, TPSN (\cite{Ganeriwal:2003:TPS:958491.958508}), FTSP (\cite{Maroti:2004:FTS:1031495.1031501}), GTSP (\cite{5211944}), and EGTSP (\cite{5614702})).
+
+ However, some systems simply require nodes to work at the same time without a global notion of time; for example, a system that nodes only wake up at the same time to relay packets,
+ a system that nodes only sample data at the same time to take snapshots of an environment.
+ Inspired by firefly synchronicity, RFA (\cite{Werner-Allen}) is the first protocol designed to achieve this requirement. 
+ Conversely, some systems require nodes \textit{not} to work at the same time without a global notion of time (\textit{i.e.}, to \textit{desynchronize}).
+\textit{Desynchronization} organizes all accesses to a shared resource to be collision-free and even equitable.
+A concrete example is a system using a Time Division Multiple Access (TDMA) protocol. 
+Nodes access the shared medium only in their time slots to send messages with no collision.
+In addition, desynchronization schedules duty cycles to improve overall performance.
+For instance, in the sensing coverage problem, only some nodes wake up to sense and their sensing ranges cover the overall region.
+Meanwhile, other nodes that their sensing ranges are redundant can stay in idle or sleep mode to reduce their energy consumption and prolong the network lifetime.   
+These two sets of nodes can periodically swap their tasks to preserve overall sensing coverage.
+Other potential applications are techniques to increase a sampling rate in multiple analog-to-digital converters, to
+schedule resource in multi-core processors, and to control traffic at intersections (\cite{4274893}). 
+
+To design an algorithm to solve the desynchronization problem, several challenges are inevitable.
+First, in most of WSNs, there is no central control. 
+If there is a central master node, the master node can assign different starting points of time to different nodes in a network to avoid the collision.
+Therefore, the problem becomes easier to solve.
+However, without such a central master node, a desynchronization algorithm  has to process in a distributed manner to reach the global consensus.
+
+Second, the problem becomes harder when there is no global time or a common notion of time available in a network.
+Due to the nature of clock oscillators, the clock skew and clock drift normally occurs;
+nodes perceive different local times and clocks run at different speed  (\cite{5614702}).
+With a time synchronization protocol, it is able to divide a time period into the exact number of slots.
+Nodes can also cooperatively determine the exact beginning of time slots to access the shared medium.
+However, many WSN systems do not assume time synchronization for achieving the global time.
+Even some systems assume time synchronization, the process to synchronize the time incurs overhead and takes time.
+
+Third, for multi-hop WSNs, the hidden terminal problem leads to packet collision.
+A node cannot determine whether its second-hop neighbor is transmitting a packet to the same receiver.
+If the node senses the wireless medium and does not aware of any transmission while its second-hop neighbor is actually transmitting, their transmitted packets can collide at the receiver.
+The RTS-CTS scheme proposed in the 802.11 standard can avoid the problem. However, the RTS-CTS scheme incurs overhead and delay, and reduces the overall throughput. Additionally, many manufacturers disable the RTS-CTS function by default (\cite{zigzag}).
+
+Additionally, due to the characteristic of WSNs, most WSN devices are resource limited. 
+For example, TelosB, which is one of well-known WSN devices, provides 8 MHz CPU, 10KB RAM, 1 MB external flash storage, and works on two AA-batteries.
+With limited computational power, the algorithm should be simple.
+With limited memory, only small data buffer is provided.
+With limited storage, a node should store data only if necessary.
+With limited energy, the control overhead should be minimized.
+
+Furthermore, the desynchronization problem is similar to the distributed graph coloring problem (\cite{5062165}).
+The graph coloring problem is known to be an NP-Hard problem.
+Additionally, the distributed graph coloring problem in a network with uncertain environment is much harder.
+
+Last but not least, a system running a desynchronization algorithm should converge to the desynchrony state. The simulation and testbed evaluation can show the convergence property of an algorithm for some specific scenarios. 
+However, to mathematically prove the convergence of the system is not trivial.
+
+In this dissertation, we propose a novel physicomimetics desynchronization algorithm for wireless sensor networks to solve such challenges.
+A physicomimetics algorithm is the method that imitates the science of Physics.
+Herein, we imitate the idea of a force field in a spatial domain from Physics and adapt this idea to be a technique for desynchronization in a temporal domain.
+To the best of our knowledge, this dissertation is the first that studies and applies physicomimetics to address the desynchronization problem. 
+Our high-level goal is to develop a physicomimetics desynchronization algorithm that solves the mentioned challenges. A network system that applies the developed algorithm will achieve the stability with the lower desynchronization error compared to previous works on desynchronization.
+
+
+\section{Design Goals for a Physicomimetics Desynchroniation Algorithm}
+To develop a physicomimetics desynchronization algorithm, we first set our goals that will be used as a guidance in designing such an algorithm throughout the dissertation. Our physciomimetics desynchronization algorithm is aimed to be practical, distributed, scalable, minimal, stable, fair without global time.
+More specifically: 
+\label{sec:intro_goal}
+\begin{itemize}
+\item be practical, the proposed algorithm should be installable and successfully runnable on real hardware. 
+\item be distributed, the proposed algorithm has to work without a central master node. Each node has no global neighbors' information and independently decides its own action based on only local information.
+\item be scalable, the proposed algorithm should scale well with network size. %The algorithm should also automatically adapt when there are new nodes joining into or leaving from the network.
+\item be minimal, the proposed algorithm should incur minimal overhead. Because wireless sensor nodes are resource-limited, the processing, memory, and transmission overhead should be minimized.
+\item be stable, in case a network is not over-saturated, the proposed algorithm should be stable under small perturbation. The network system should converge to an equilibrium.
+\item be fair without global time, the proposed algorithm has to work without global time knowledge.
+All nodes in a system is not synchronized. Their local clocks can be different in time. In other words, there is no common notion of global time. However, the proposed algorithm should space nodes equivalently in the time domain for single-hop networks and minimizes the deviation of channel utilization per node in multi-hop networks.
+\end{itemize}
+
+\section{Scope and Assumption}
+\label{sec:assump}
+The scope of this dissertation is limited to the following:
+\begin{itemize}
+\item This dissertation considers the wireless sensor network that 1) there is no central master node 2) nodes are not synchronized and lack of global time knowledge 3) nodes are static (\textit{i.e.}, there is no mobile node). 
+\item This dissertation proposes a desynchronization algorithm that is able to work on both single-hop and multi-hop networks.
+\item The proposed algorithm does not rely on any global information.
+\item The proposed algorithm is runnable on both TOSSIM simulator (\cite{levis-tossim-03}) and TelosB hardware platform.
+\item The number of neighboring nodes is limited to under 100 nodes for single-hop networks and under 30 nodes for multi-hop networks. 
+\end{itemize}
+
+Additionally, in this dissertation, we assume the following:
+\begin{itemize}
+\item Each node attempts to periodically fire a message with the same time period.
+\item There is no mobile node in a network. 
+\item There is no global time knowledge. Clocks are not synchronized. Local timestamps of nodes can be the same or different.
+\end{itemize}
+
+\section{Summary of Contributions}
+\label{sec:intro_contribution}
+The main contribution of this dissertation is a novel physicomimetics desynchronization algorithm for wireless sensor networks. The proposed algorithm has several desirable properties. First, the algorithm runs distributedly on each sensor node. Central master node and global information is not required. Second, the algorithm works even nodes are not synchronized and do not realize the global time. Third, the algorithm is able to work for both single-hop and multi-hop networks. In addition, the algorithm is lightweight, simple, and practical. The size of a compiled binary is less than 30 kilobytes. The required memory is less than 2 kilobytes. This property is desirable to implement, extend, and apply for resource-limited wireless sensor nodes. Furthermore, the algorithm requires only local 2-hop information and scales well with network size. Finally, the algorithm is stable under small perturbation. We believe that the proposed algorithm can be a primer for several applications such as TDMA protocol, packet collision avoidance, area sensing coverage, cooperative data sampling, and other resource-sharing applications.
+
+\section{Dissertation Organization}
+\label{sec:intro_organization}
+The rest of the dissertation is organized as follows.
+The next chapter describes desynchronization preliminaries to understand the problem and the traditional framework.
+This chapter also reviews works in literature and describes the motivation of our algorithm.
+Chapter \ref{chap:algo} presents our desynchronization algorithm and performance evaluation on single-hop networks. 
+In Chapter \ref{chap:stability-singlehop}, we analyse the stability of the proposed single-hop algorithm.
+Then, we extend the proposed algorithm to support multi-hop networks and evaluate the algorithm on various topologies in Chapter \ref{chap:multihop}. The stability analysis of the multi-hop algorithm is presented in Chapter \ref{chap:stability-multihop}.
+Finally, Chapter \ref{chap:conclusion} concludes the dissertation and discusses the current limitations and directions for further research.

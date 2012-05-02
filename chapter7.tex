@@ -1,0 +1,34 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+\section{Dissertation Summary}
+In the beginning of this dissertation, we study and analyse the desynchronization problem. 
+Desynchronization is useful for scheduling nodes to perform tasks at different time.
+This property is desirable for resource sharing, TDMA scheduling, and collision avoiding.
+However, to desynchronize nodes in wireless sensor networks is difficult due to several limitations.
+This dissertation focuses on wireless sensor networks that sensor nodes lack of global time knowledge (\textit{i.e.}, clocks are not synchronized).
+Without global time knowledge, nodes perceive different local times. The beginning of time slots and the exact number of time slots are difficult to determine.
+In addition, due to the hidden terminal problem, a node cannot sense a transmission signal from two-hop neighboring nodes. If two nodes transmit messages simultaneously, two messages collide at a middle receiver node. 
+
+To solve such problems, this dissertation proposes a novel physicomimetics desynchronization algorithm.
+Inspired by robotic circular formation and Physics principle, the proposed algorithm creates an artificial force field for wireless sensor nodes. 
+Nodes with closer time phases have stronger forces to repel each other in the time domain. Each node adjusts its time phase proportionally to the total amount of received forces. Once the received forces are balanced, nodes are desynchronized. 
+The proposed algorithm has several benefits. First, the algorithm runs distributedly on each sensor node. No central master node is required. Second, the algorithm works even nodes are not synchronized and do not realize global time. Third, the algorithm is able to work for both single-hop and multi-hop networks. In addition, the algorithm is lightweight, simple, and practical. The size of a compiled binary is less than 30 kilobytes. The required memory is less than 2 kilobytes. This property is desirable to implement, extend, and apply for resource-limited wireless sensor nodes. We also demonstrate that the algorithm is runnable on both simulation and real hardware. Furthermore, the algorithm requires only local 2-hop information and scales well with network size. 
+
+We also mathematically analyse the convexity and stability of the proposed physicomimetics algorithm. The analysis reveals that the force function used in the algorithm is a convex function in the case of single-hop networks. Therefore, there is only global minima and no local minima. The analysis also proves that the algorithm is stable under small perturbation at the equilibrium which is also another desirable property of desynchronization.
+ 
+\section{Discussion on Limitations and Future Works}
+Despite of several benefits, there are limitations that should be mentioned. 
+
+First, the proposed algorithm does not always lead to perfect desynchronization on multi-hop networks even if the algorithm performs very well on single-hop networks and outperforms previous works on both single-hop and multi-hop networks. On multi-hop networks, to achieve the perfect desynchrony state depends on topology and initial network configuration. 
+
+Second, even, in single-hop networks, the proposed algorithm does not incur any message overhead, the multi-hop algorithm incurs overhead because it includes one-hop neighbors' relative phases in firing messages. 
+We present the optimization scheme that reduces the frequency to include relative phases in firing messages. However, there is a trade-off between message overhead and convergence speed. There is room for further optimization. One feasible approach is that each node is not necessary to include all relative phases of one-hop neighbors because this dissertation shows that the algorithm tolerates to packet loss. With this approach, the multi-hop algorithm is not limited to a small number of neighbors.
+
+Third, in stability analysis, this dissertation analyses the stability of the dynamic system only at the equilibrium. This is due to the fact that the dynamic system of our approach is non-linear dynamic and the standard linear dynamic system analysis does not suffice. We conjecture that the full proof of stability can be achieved with the advance mathematical analysis based on the Lyapunov stability theorem.
+
+In addition, the proper value of step size $K$ that is used in this dissertation is derived from the empirical experiments on the simulation environment. This value works very well on both simulator and real devices in our investigated scenarios. However, it should be tuned for a proper value for each actual operating environment to maximize the performance of a system. 
+
+Last but not least, this dissertation provides a fundamental mechanism to desynchronize nodes. Future works on application development based on our mechanism are viable. Developing an application could lead to new ideas to improve the proposed algorithm.
+
+\section{Concluding Remark}
+To the best of our knowledge, this dissertation is the first to introduce a physicomimetics desynchronization protocol for wireless sensor networks that is based on the concept of electromagnetic fields, a foundation of physics. We believe that this dissertation could be a primer for further studies in physicomimetics approaches for wireless networks and could be extended to support several applications.

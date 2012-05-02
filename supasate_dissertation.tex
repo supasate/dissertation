@@ -1,0 +1,202 @@
+\documentclass[a4paper,10pt,engthesis,doctor]{chula}
+
+%% These are some useful LaTeX package
+%% the list is taken from the bare_jnrl.tex of IEEEtran, by Michael Shell
+%\usepackage[pdftex]{graphicx}           % for including graphics (eps and pdf)
+%% NOTE: for dual use with latex and pdflatex, instead load graphicx like:
+%\ifx\pdfoutput\undefined
+%  \usepackage[dvips]{graphicx}
+%  \graphicspath{{./figure/}}
+%\else
+%  \usepackage[pdftex]{graphicx}
+%  \graphicspath{{./figure/}}
+%\fi
+\graphicspath{{./figure/}}
+
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\usepackage[cmex10]{amsmath}    % math package provides several command and symbols
+                                % cmex10 option force only type 1 font to be used
+\interdisplaylinepenalty=2500   % amsmath set this value to 10000, if you want to adjust
+                                % this, do so after use the package
+\usepackage{algorithm}          % package for writing a pseudo code
+\usepackage{algorithmic}        % package for writing a pseudo code
+\usepackage{array}              % improvement to the tabular and array
+%\usepackage{mdwmath}           % other useful math package for formating equations
+%\usepackage{mdwtab}
+\usepackage{subfig}             % for placing subfigures in one figures environment
+                                % (for example, Fig 1a and 1b)
+\usepackage{url}                % for breaking urls (use \url{http://www.example.com}
+\usepackage{setspace}           % for double spacing
+%\usepackage{times}             % for times roman font
+%\usepackage{lscape}			   % for landscape page
+
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{natbib}
+
+%% Environment, theorem, etc.
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+
+% we use \mathbb{R} instead of \Re
+\renewcommand{\Re}{\mathbb{R}}
+
+\newcommand{\pspan}{\mbox{\sc span}^+}
+\newcommand{\nspan}{\mbox{\sc span}^-}
+\newcommand{\itr}{\mbox{\sc int}}
+\newcommand{\co}{\mbox{\sc co}}
+\newcommand{\ri}{\mbox{\sc ri}}
+\newcommand{\ints}{\Omega}
+\newcommand{\rspace}{\Re^3}
+\newcommand{\ha}{\mathcal{H}}
+\newcommand{\FindInts}{\mbox{\sc FindInts}}
+\newcommand{\FindFG}{\mbox{\sc FindFG}}
+\newcommand{\La}{\mathcal{U}}
+\newcommand{\Lb}{{}^S\mathcal{U}}
+\newcommand{\Lc}{{}^\mathfrak{F}\mathcal{U}}
+\newcommand{\Ta}{\mathcal{P}}
+
+%% For proof
+\def\QED{\mbox{\rule[0pt]{1.3ex}{1.3ex}}} % for a filled box
+\def\proof{\noindent\hspace{2em}{\itshape Proof: }}
+\def\endproof{\hspace*{\fill}~\QED\par\endtrivlist\unskip\paragraph{}}
+
+%% Correct bad hyphenation here
+\hyphenation{net-works physico-mi-metics kij-sirikul cha-lerm-ek inta-nagon-wiwat tiny-os}
+
+%%-------------------------------------------------------------------------------
+%%-                         SETTING THESIS PARAMETERS                           -
+%%-------------------------------------------------------------------------------
+\thesistitle                            % set the thesis tile (use {\wbr} for word break)
+{ขั้นตอนวิธีการไม่ประสานเวลา{\wbr}เลียนแบบ{\wbr}หลักการทางฟิสิกส์{\wbr}โดย{\wbr}ปราศ{\wbr}จากความรู้ทาง{\wbr}เวลาแบบครอบคลุมสำหรับเครือข่ายตัวรับรู้ไร้สาย} % Thai Title
+{A Physicomimetics Desynchronization Algorithm without Global Time Knowledge for Wireless Sensor Networks}      % English title (auto upper case)
+
+\authortitle                            % set the title of the author, e.g., Mr., Miss, Dr. etc.
+{นาย}                                   % Thai Title of the author
+{Mr.}                                   % English Title of the author
+\thesisauthor                           % set the author name (must not include title (Mr., Miss, Dr., etc.)
+{ศุภเสฏฐ์ ชูชัยศรี}                          % Author name in Thai
+{Supasate Choochaisri}                  % Author name in English
+
+\advisor                                               % set the advisor
+{ผู้ช่วยศาสตราจารย์ ดร. เฉลิมเอก อินทนากรวิวัฒน์}               % Advisor name in Thai
+{ผศ. ดร. เฉลิมเอก อินทนากรวิวัฒน์}                          % Advisor name in Thai with abbrev. title
+{Assistant Professor Chalermek Intanagonwiwat, Ph.D.}  % Advisor name in English
+{Asst. Prof. Chalermek Intanagonwiwat, Ph.D.}          % Advisor name in English with abbrev. title
+
+%% If the thesis has co-advisor, use this optional command
+%\coadvisor
+%{ผู้ช่วยศาสตราจารย์ ดร. เฉลิมเอก อินทนากรวิวัฒน์}  % Co-Advisor name in Thai
+%{ผศ. ดร. เฉลิมเอก อินทนากรวิวัฒน์}  % Co-Advisor name in Thai with abbrev. title
+%{Assistant Professor Chalermek Intanagonwiwat, Ph.D.}  % Co-Advisor name in English
+%{Asst. Prof. Chalermek Intanagonwiwat, Ph.D.}          % Co-Advisor name in English with abbrev. title
+
+\faculty                                % set the faculty
+{วิศวกรรมศาสตร์}                          % name of the faculty in Thai
+{Engineering}                           % name of the faculty in English
+\department                             % set the department
+{วิศวกรรมคอมพิวเตอร์}                      % name of the department in Thai
+{Computer Engineering}                  % name of the department in English
+\fieldofstudy                           % set the field of study (าขิช)
+{วิศวกรรมคอมพิวเตอร์}                      % Field in Thai
+{Computer Engineering}                  % Field in English
+\degree                                 % set the degree name
+{วิศวกรรมศาสตรดุษฎีบัณฑิต}                   % Degree name in Thai
+{Doctor of Philosophy}                  % Degree name in English
+\academicyear{2554}                     % Academic Year (in Thai Calendar)
+\authorid{5271867021}                   % ID of the author
+\keywords{Desynchronization / Physicomimetics/ Artificial Force Field / Wireless Sensor Network / Wireless Network
+}                                       % Keywords, for English abstract
+\deanname                               % name of the dean
+{รองศาสตราจารย์ ดร. บุญสม เลิศหิรัญวงศ์}                       % in Thai
+{Associate Professor Boonsom Lerdhirunwong, Dr.Ing.}     % in English
+%{ศาสตราจารย์ ดร. ดิเรก ลาวัณย์ศิริ}                           % in Thai
+%{Professor Direk Lavansiri, Ph.D.}                      % in English
+
+\committee                              % list of committee, please use \CommitteeBlock,\CommiteeBlockAdvisor,\CommitteBlockCoAdvisor
+{
+\CommitteeBlock{Chairman}{Professor Prabhas Chongstitvatana, Ph.D.}          % chairman
+\CommitteeBlockAdvisor                  % pre-defined value for advisor
+\CommitteeBlockCoAdvisor                % pre-defined value for co-advisor
+\CommitteeBlock{Examiner}{Professor Boonserm Kijsirikul, Ph.D.}                % examiner
+\CommitteeBlock{Examiner}{Assistant Professor Kultida Rojviboonchai, Ph.D.}     % examiner
+\CommitteeBlock{External Examiner}{Associate Professor Anan Phonphoem, Ph.D.}  % examiner
+}
+
+%% Next is the example of Thai Committee
+%% the author should use only one committee
+%\committee                              % list of committee
+%{
+%\CommitteeBlock{ประธาน}{ศาสตราจารย์ ดร. ประภาส จงสถิตย์วัฒนา}   % chairman
+%\CommitteeBlockAdvisor                  % pre-defined value for advisor
+%\CommitteeBlockCoAdvisor                % pre-defined value for co-advisor
+%\CommitteeBlock{กรรมการ}{ศาสตราจารย์ ดร. บุญเสริม กิจศิริกุล}       % examiner
+%\CommitteeBlock{กรรมการ}{ผู้ช่วยศาสตราจารย์ ดร. กุลธิดา โรจน์วิบูลขัย} % examiner
+%\CommitteeBlock{กรรมการภายนอก}{รองศาสตราจารย์ ดร. อนันต์ ผลเพิ่ม} % examiner
+%}
+
+\include{macros}
+%%-------------------------------------------------------------------------------
+%%-                               DOCUMENT                                      -
+%%-------------------------------------------------------------------------------
+\begin{document}
+%% Thesis starts with Thai Cover
+\makethaicover
+\newpage
+
+%% Followed by English Cover
+\makeenglishcover
+\newpage
+
+%% Generate committee page
+\makecommittee
+\newpage
+%% Thai Abstract Section
+\include{thaiabstract}
+\newpage
+
+%% English Abstract Section
+\include{englishabstract}
+\newpage
+
+% Acknowledgement Section
+\include{acknowledgement}
+
+% Table of Content
+\tableofcontents        % generate table of content
+\newpage
+\listoftables           % generate list of tables
+\newpage
+\listoffigures          % generate list of figures
+		
+%% Main Content
+\include{chapter1} 
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{chapter7}
+
+%% References Section (must be placed before appendices)
+\ULforem %%%
+\setlength{\bibhang}{1.5cm}
+\bibliographystyle{chula_nat}
+\bibliography{supasate_dissertation} % speficy your bibtex file here (this example is supasate_dissertation.bib).
+
+\normalem
+
+%% Appendix Section
+\startappendix
+\include{appendix1}
+\include{appendix2}
+
+%% Biography Section
+\include{biography} % specify your biography file here (this example is biography.tex). 
+
+\end{document}
