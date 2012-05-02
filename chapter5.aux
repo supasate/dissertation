@@ -1,0 +1,563 @@
+\relax 
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{0cm}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Multi-Hop Physicomimetics Desynchronization Algorithm}{46}}
+\newlabel{chap:multihop}{{5}{46}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{46}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}First Multi-hop Experiment and Hidden Terminal Problem}{46}}
+\newlabel{sec:hidden-terminal}{{5.2}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces A simple multi-hop network.\relax }}{46}}
+\newlabel{fig:3nodes-chain}{{5.1}{46}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Message collision on a 3-node multi-hop chain network. The period T is 1000 milliseconds. Node 1 is at phase 0 whereas node 3 is approximately at the same phase as node 1.\relax }}{47}}
+\newlabel{fig:3nodes-chain-dwarf}{{5.2}{47}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The perfect desynchrony state of a 3-node multi-hop chain network, The period T is 1000 milliseconds. Node 1 is at phase 0 whereas others are separated by T/3 milliseconds.\relax }}{47}}
+\newlabel{fig:3nodes-chain-expected}{{5.3}{47}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\citation{4663417}
+\citation{MK09DESYNC}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces The hidden terminal problem.\relax }}{48}}
+\newlabel{fig:3nodes-chain-hidden}{{5.4}{48}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\newlabel{fig:broadcast-problem-topo}{{5.5a}{49}}
+\newlabel{sub@fig:broadcast-problem-topo}{{(a)}{a}}
+\newlabel{fig:broadcast-problem-ring}{{5.5b}{49}}
+\newlabel{sub@fig:broadcast-problem-ring}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces A node includes its one-hop neighbors' firing times into a firing message. (a) Node 2 fires a message containing node 1's and node 2's firing timestamps that it perceives. (b) Node 1 misunderstands the time phase of node 3 because local time of node 1 and local time of node 2 are different.\relax }}{49}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{49}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{49}}
+\newlabel{fig:broadcast-problem}{{5.5}{49}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}DWARF with Multi-hop Extension (M-DWARF)}{49}}
+\newlabel{sec:extension}{{5.3}{49}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Relative Time Relaying}{49}}
+\newlabel{sec:relative}{{5.3.1}{49}}
+\newlabel{fig:broadcast-relative-topo}{{5.6a}{50}}
+\newlabel{sub@fig:broadcast-relative-topo}{{(a)}{a}}
+\newlabel{fig:broadcast-relative-ring}{{5.6b}{50}}
+\newlabel{sub@fig:broadcast-relative-ring}{{(b)}{b}}
+\newlabel{fig:broadcast-relative-perfect}{{5.6c}{50}}
+\newlabel{sub@fig:broadcast-relative-perfect}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces EXT-DWARF: A node includes its one-hop neighbors' relative phases into a firing message. (a) Node 2 fires a message containing node 1's and node 2's relative phases. (b) Node 1 marks the node 2's phase as a reference phase and uses it as an offset for calculating the node 3's phase. (c) Eventually, nodes are in the perfect desynchrony state.\relax }}{50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{50}}
+\newlabel{fig:broadcast-relative}{{5.6}{50}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Force Absorption}{50}}
+\newlabel{sec:absorption}{{5.3.2}{50}}
+\newlabel{fig:4nodes-chain-topo}{{5.7a}{51}}
+\newlabel{sub@fig:4nodes-chain-topo}{{(a)}{a}}
+\newlabel{fig:4nodes-chain-expected}{{5.7b}{51}}
+\newlabel{sub@fig:4nodes-chain-expected}{{(b)}{b}}
+\newlabel{fig:4nodes-chain-dwarf}{{5.7c}{51}}
+\newlabel{sub@fig:4nodes-chain-dwarf}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces The problem of the single-hop DWARF algorithm. (a) A 4-node chain topology. The transmission signal of node 2 does not interfere any receiver of node 3 and vice versa. (b) In the node 0's local view, the expected result is that node 2 and node 3 can share the same phase without interference. (c) In extended DWARF, node 0 is not in the expected phase because there are two forward repelling forces from node 2 and node 3 while there is one backward repelling force from node 1.\relax }}{51}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{51}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{51}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{51}}
+\newlabel{fig:4nodes-chain}{{5.7}{51}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:4nodes-chain-dwarf-absorb-split}{{5.8a}{52}}
+\newlabel{sub@fig:4nodes-chain-dwarf-absorb-split}{{(a)}{a}}
+\newlabel{fig:4nodes-chain-dwarf-absorb-perfect}{{5.8b}{52}}
+\newlabel{sub@fig:4nodes-chain-dwarf-absorb-perfect}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces EXT-DWARF with force absorption. The blur line represented an absorbed force. (a) When node 2 and 3 are apart, the force from node 2 affects node 0 but the force is partly absorbed. (b) When node 2 and 3 are at the same phase, the force from node 2 is fully absorbed.\relax }}{52}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{52}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{52}}
+\newlabel{fig:4nodes-chain-dwarf-absorb}{{5.8}{52}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{eq:force-absorb}{{5.1}{52}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}M-DWARF Algorithm}{53}}
+\newlabel{sec:multihop-algo}{{5.4}{53}}
+\newlabel{eq:newphase-mhop}{{5.2}{53}}
+\citation{MK09DESYNC}
+\citation{5062165}
+\citation{4663417}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Evaluation}{54}}
+\newlabel{sec:multihop-evaluation}{{5.5}{54}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Evaluation Environment}{54}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Single-hop Networks (Fully-connected Topology) Evaluation}{54}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Pseudocode of M-DWARF algorithm\relax }}{55}}
+\newlabel{fig:pseudocodemdwarf}{{5.9}{55}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2.1}Desynchronization Error}{55}}
+\newlabel{fig:rmse300rounds-mhop}{{5.10a}{56}}
+\newlabel{sub@fig:rmse300rounds-mhop}{{(a)}{a}}
+\newlabel{fig:nrmse300rounds-mhop}{{5.10b}{56}}
+\newlabel{sub@fig:nrmse300rounds-mhop}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces (a) Root mean square error after 300 time periods. (b) Root mean square error normalized by perfect phase difference after 300 time periods.\relax }}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{56}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\newlabel{fig:rmse-sparse-mhop}{{5.11a}{57}}
+\newlabel{sub@fig:rmse-sparse-mhop}{{(a)}{a}}
+\newlabel{fig:rmse-dense-mhop}{{5.11b}{57}}
+\newlabel{sub@fig:rmse-dense-mhop}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Convergence time and absolute root mean square error\relax }}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sparse}}}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Dense}}}{57}}
+\newlabel{fig:rmse-convergence-mhop}{{5.11}{57}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:nrmse-sparse-mhop}{{5.12a}{57}}
+\newlabel{sub@fig:nrmse-sparse-mhop}{{(a)}{a}}
+\newlabel{fig:nrmse-dense-mhop}{{5.12b}{57}}
+\newlabel{sub@fig:nrmse-dense-mhop}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Convergence time and root mean square error normalized by expected phase difference\relax }}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sparse}}}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Dense}}}{57}}
+\newlabel{fig:nrmse-convergence-mhop}{{5.12}{57}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2.2}Convergence Time}{57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Fluctuation in some cases of EXTENDED-DESYNC.\relax }}{58}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {8 nodes}}}{58}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {16 nodes}}}{58}}
+\newlabel{fig:fluctuate}{{5.13}{58}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Impact of Topologies}{58}}
+\newlabel{fig:6nodes-star-eval}{{5.14a}{59}}
+\newlabel{sub@fig:6nodes-star-eval}{{(a)}{a}}
+\newlabel{fig:20nodes-star-eval}{{5.14b}{59}}
+\newlabel{sub@fig:20nodes-star-eval}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Star topology\relax }}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {6 nodes}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {20 nodes}}}{59}}
+\newlabel{fig:star-eval}{{5.14}{59}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:6nodes-star-result-mdwarf-good}{{5.15a}{59}}
+\newlabel{sub@fig:6nodes-star-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:6nodes-star-result-extdesync-good}{{5.15b}{59}}
+\newlabel{sub@fig:6nodes-star-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:6nodes-star-result-light-good}{{5.15c}{59}}
+\newlabel{sub@fig:6nodes-star-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces 6-node star topology evaluation (average case).\relax }}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{59}}
+\newlabel{fig:6nodes-star-result-good}{{5.15}{59}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:20nodes-star-result-mdwarf-good}{{5.16a}{59}}
+\newlabel{sub@fig:20nodes-star-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:20nodes-star-result-extdesync-good}{{5.16b}{59}}
+\newlabel{sub@fig:20nodes-star-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:20nodes-star-result-light-good}{{5.16c}{59}}
+\newlabel{sub@fig:20nodes-star-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces 20-node star topology evaluation (average case).\relax }}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{59}}
+\newlabel{fig:20nodes-star-result-good}{{5.16}{59}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\newlabel{fig:6nodes-star-result-mdwarf-bad}{{5.17a}{60}}
+\newlabel{sub@fig:6nodes-star-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:6nodes-star-result-extdesync-bad}{{5.17b}{60}}
+\newlabel{sub@fig:6nodes-star-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:6nodes-star-result-light-bad}{{5.17c}{60}}
+\newlabel{sub@fig:6nodes-star-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces 6-node star topology evaluation (problematic case).\relax }}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{60}}
+\newlabel{fig:6nodes-star-result-bad}{{5.17}{60}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:20nodes-star-result-mdwarf-bad}{{5.18a}{60}}
+\newlabel{sub@fig:20nodes-star-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:20nodes-star-result-extdesync-bad}{{5.18b}{60}}
+\newlabel{sub@fig:20nodes-star-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:20nodes-star-result-light-bad}{{5.18c}{60}}
+\newlabel{sub@fig:20nodes-star-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces 20-node star topology evaluation (problematic case).\relax }}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{60}}
+\newlabel{fig:20nodes-star-result-bad}{{5.18}{60}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3.1}Star Topology}{60}}
+\newlabel{fig:3nodes-chain-eval}{{5.19a}{61}}
+\newlabel{sub@fig:3nodes-chain-eval}{{(a)}{a}}
+\newlabel{fig:10nodes-chain-eval}{{5.19b}{61}}
+\newlabel{sub@fig:10nodes-chain-eval}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Chain topology\relax }}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {3 nodes}}}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {10 nodes}}}{61}}
+\newlabel{fig:chain-eval}{{5.19}{61}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:3nodes-chain-result-mdwarf-good}{{5.20a}{61}}
+\newlabel{sub@fig:3nodes-chain-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:3nodes-chain-result-extdesync-good}{{5.20b}{61}}
+\newlabel{sub@fig:3nodes-chain-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:3nodes-chain-result-light-good}{{5.20c}{61}}
+\newlabel{sub@fig:3nodes-chain-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces 3-node chain topology evaluation (average case).\relax }}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{61}}
+\newlabel{fig:3nodes-chain-result-good}{{5.20}{61}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-chain-result-mdwarf-good}{{5.21a}{61}}
+\newlabel{sub@fig:10nodes-chain-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:10nodes-chain-result-extdesync-good}{{5.21b}{61}}
+\newlabel{sub@fig:10nodes-chain-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:10nodes-chain-result-light-good}{{5.21c}{61}}
+\newlabel{sub@fig:10nodes-chain-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces 10-node chain topology evaluation (average case).\relax }}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{61}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{61}}
+\newlabel{fig:10nodes-chain-result-good}{{5.21}{61}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3.2}Chain Topology}{61}}
+\newlabel{fig:3nodes-chain-result-mdwarf-bad}{{5.22a}{62}}
+\newlabel{sub@fig:3nodes-chain-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:3nodes-chain-result-extdesync-bad}{{5.22b}{62}}
+\newlabel{sub@fig:3nodes-chain-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:3nodes-chain-result-light-bad}{{5.22c}{62}}
+\newlabel{sub@fig:3nodes-chain-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces 3-node chain topology evaluation (problematic case).\relax }}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{62}}
+\newlabel{fig:3nodes-chain-result-bad}{{5.22}{62}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-chain-result-mdwarf-bad}{{5.23a}{62}}
+\newlabel{sub@fig:10nodes-chain-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:10nodes-chain-result-extdesync-bad}{{5.23b}{62}}
+\newlabel{sub@fig:10nodes-chain-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:10nodes-chain-result-light-bad}{{5.23c}{62}}
+\newlabel{sub@fig:10nodes-chain-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces 10-node chain topology evaluation (problematic case).\relax }}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{62}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{62}}
+\newlabel{fig:10nodes-chain-result-bad}{{5.23}{62}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:4nodes-cycle-eval}{{5.24a}{63}}
+\newlabel{sub@fig:4nodes-cycle-eval}{{(a)}{a}}
+\newlabel{fig:10nodes-cycle-eval}{{5.24b}{63}}
+\newlabel{sub@fig:10nodes-cycle-eval}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Cycle topology\relax }}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {4 nodes}}}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {10 nodes}}}{63}}
+\newlabel{fig:cycle-eval}{{5.24}{63}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:4nodes-cycle-result-mdwarf-good}{{5.25a}{63}}
+\newlabel{sub@fig:4nodes-cycle-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:4nodes-cycle-result-extdesync-good}{{5.25b}{63}}
+\newlabel{sub@fig:4nodes-cycle-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:4nodes-cycle-result-light-good}{{5.25c}{63}}
+\newlabel{sub@fig:4nodes-cycle-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces 4-node cycle topology evaluation (average case).\relax }}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{63}}
+\newlabel{fig:4nodes-cycle-result-good}{{5.25}{63}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-cycle-result-mdwarf-good}{{5.26a}{63}}
+\newlabel{sub@fig:10nodes-cycle-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:10nodes-cycle-result-extdesync-good}{{5.26b}{63}}
+\newlabel{sub@fig:10nodes-cycle-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:10nodes-cycle-result-light-good}{{5.26c}{63}}
+\newlabel{sub@fig:10nodes-cycle-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces 10-node cycle topology evaluation (average case).\relax }}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{63}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{63}}
+\newlabel{fig:10nodes-cycle-result-good}{{5.26}{63}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3.3}Cycle Topology}{63}}
+\newlabel{fig:4nodes-cycle-result-mdwarf-bad}{{5.27a}{64}}
+\newlabel{sub@fig:4nodes-cycle-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:4nodes-cycle-result-extdesync-bad}{{5.27b}{64}}
+\newlabel{sub@fig:4nodes-cycle-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:4nodes-cycle-result-light-bad}{{5.27c}{64}}
+\newlabel{sub@fig:4nodes-cycle-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.27}{\ignorespaces 4-node cycle topology evaluation (problematic case).\relax }}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{64}}
+\newlabel{fig:4nodes-cycle-result-bad}{{5.27}{64}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-cycle-result-mdwarf-bad}{{5.28a}{64}}
+\newlabel{sub@fig:10nodes-cycle-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:10nodes-cycle-result-extdesync-bad}{{5.28b}{64}}
+\newlabel{sub@fig:10nodes-cycle-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:10nodes-cycle-result-light-bad}{{5.28c}{64}}
+\newlabel{sub@fig:10nodes-cycle-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces 10-node cycle topology evaluation (problematic case).\relax }}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{64}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{64}}
+\newlabel{fig:10nodes-cycle-result-bad}{{5.28}{64}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3.4}Dumbbell Topology}{64}}
+\newlabel{fig:6nodes-butterfly-eval}{{5.29a}{65}}
+\newlabel{sub@fig:6nodes-butterfly-eval}{{(a)}{a}}
+\newlabel{fig:20nodes-butterfly-eval}{{5.29b}{65}}
+\newlabel{sub@fig:20nodes-butterfly-eval}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Dumbbell topology\relax }}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {6 nodes}}}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {20 nodes}}}{65}}
+\newlabel{fig:butterfly-eval}{{5.29}{65}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:6nodes-butterfly-result-mdwarf-good}{{5.30a}{65}}
+\newlabel{sub@fig:6nodes-butterfly-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:6nodes-butterfly-result-extdesync-good}{{5.30b}{65}}
+\newlabel{sub@fig:6nodes-butterfly-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:6nodes-butterfly-result-light-good}{{5.30c}{65}}
+\newlabel{sub@fig:6nodes-butterfly-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces 6-node dumbbell topology evaluation (average case).\relax }}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{65}}
+\newlabel{fig:6nodes-butterfly-result-good}{{5.30}{65}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:20nodes-butterfly-result-mdwarf-good}{{5.31a}{65}}
+\newlabel{sub@fig:20nodes-butterfly-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:20nodes-butterfly-result-extdesync-good}{{5.31b}{65}}
+\newlabel{sub@fig:20nodes-butterfly-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:20nodes-butterfly-result-light-good}{{5.31c}{65}}
+\newlabel{sub@fig:20nodes-butterfly-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces 20-node dumbbell topology evaluation (average case).\relax }}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{65}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{65}}
+\newlabel{fig:20nodes-butterfly-result-good}{{5.31}{65}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\citation{4663417}
+\citation{4663417}
+\newlabel{fig:6nodes-butterfly-result-mdwarf-bad}{{5.32a}{66}}
+\newlabel{sub@fig:6nodes-butterfly-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:6nodes-butterfly-result-extdesync-bad}{{5.32b}{66}}
+\newlabel{sub@fig:6nodes-butterfly-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:6nodes-butterfly-result-light-bad}{{5.32c}{66}}
+\newlabel{sub@fig:6nodes-butterfly-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces 6-node dumbbell topology evaluation (problematic case).\relax }}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{66}}
+\newlabel{fig:6nodes-butterfly-result-bad}{{5.32}{66}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:20nodes-butterfly-result-mdwarf-bad}{{5.33a}{66}}
+\newlabel{sub@fig:20nodes-butterfly-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:20nodes-butterfly-result-extdesync-bad}{{5.33b}{66}}
+\newlabel{sub@fig:20nodes-butterfly-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:20nodes-butterfly-result-light-bad}{{5.33c}{66}}
+\newlabel{sub@fig:20nodes-butterfly-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces 20-node dumbbell topology evaluation (problematic case).\relax }}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{66}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{66}}
+\newlabel{fig:20nodes-butterfly-result-bad}{{5.33}{66}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3.5}Mesh Topology}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces 10-node multi-hop network. A solid line represents 1-hop connectivity. A dash line represents 2-hop connectivity. Any two nodes that are connected within 2-hop connectivity can interfere each other transmission.\relax }}{67}}
+\newlabel{fig:10nodes-topo}{{5.34}{67}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-mesh-result-mdwarf-good}{{5.35a}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-mdwarf-good}{{(a)}{a}}
+\newlabel{fig:10nodes-mesh-result-extdesync-good}{{5.35b}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-extdesync-good}{{(b)}{b}}
+\newlabel{fig:10nodes-mesh-result-light-good}{{5.35c}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-light-good}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.35}{\ignorespaces 10-node mesh topology evaluation (average case).\relax }}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{67}}
+\newlabel{fig:10nodes-mesh-result-good}{{5.35}{67}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:10nodes-mesh-result-mdwarf-bad}{{5.36a}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-mdwarf-bad}{{(a)}{a}}
+\newlabel{fig:10nodes-mesh-result-extdesync-bad}{{5.36b}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-extdesync-bad}{{(b)}{b}}
+\newlabel{fig:10nodes-mesh-result-light-bad}{{5.36c}{67}}
+\newlabel{sub@fig:10nodes-mesh-result-light-bad}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.36}{\ignorespaces 10-node mesh topology evaluation (problematic case).\relax }}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {M-DWARF}}}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {EXTENDED-DESYNC}}}{67}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {LIGHTWEIGHT}}}{67}}
+\newlabel{fig:10nodes-mesh-result-bad}{{5.36}{67}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Impact of Period Length}{67}}
+\newlabel{fig:period1000-mdwarf}{{5.37a}{68}}
+\newlabel{sub@fig:period1000-mdwarf}{{(a)}{a}}
+\newlabel{fig:period2000-mdwarf}{{5.37b}{68}}
+\newlabel{sub@fig:period2000-mdwarf}{{(b)}{b}}
+\newlabel{fig:period3000-mdwarf}{{5.37c}{68}}
+\newlabel{sub@fig:period3000-mdwarf}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.37}{\ignorespaces Impact of period length ($T$) in M-DWARF\relax }}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{68}}
+\newlabel{fig:period-mdwarf}{{5.37}{68}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:period1000-ext}{{5.38a}{68}}
+\newlabel{sub@fig:period1000-ext}{{(a)}{a}}
+\newlabel{fig:period2000-ext}{{5.38b}{68}}
+\newlabel{sub@fig:period2000-ext}{{(b)}{b}}
+\newlabel{fig:period3000-ext}{{5.38c}{68}}
+\newlabel{sub@fig:period3000-ext}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.38}{\ignorespaces Impact of period length ($T$) in EXTENDED-DESYNC\relax }}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{68}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{68}}
+\newlabel{fig:period-ext}{{5.38}{68}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\newlabel{fig:period1000-overallthroughput-30-40}{{5.39a}{69}}
+\newlabel{sub@fig:period1000-overallthroughput-30-40}{{(a)}{a}}
+\newlabel{fig:period2000-overallthroughput-30-40}{{5.39b}{69}}
+\newlabel{sub@fig:period2000-overallthroughput-30-40}{{(b)}{b}}
+\newlabel{fig:period3000-overallthroughput-30-40}{{5.39c}{69}}
+\newlabel{sub@fig:period3000-overallthroughput-30-40}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.39}{\ignorespaces Average channel utilization of 30 and 40 node networks\relax }}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{69}}
+\newlabel{fig:period-overallthroughput-30-40}{{5.39}{69}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:period1000-overallthroughput-50-60}{{5.40a}{69}}
+\newlabel{sub@fig:period1000-overallthroughput-50-60}{{(a)}{a}}
+\newlabel{fig:period2000-overallthroughput-50-60}{{5.40b}{69}}
+\newlabel{sub@fig:period2000-overallthroughput-50-60}{{(b)}{b}}
+\newlabel{fig:period3000-overallthroughput-50-60}{{5.40c}{69}}
+\newlabel{sub@fig:period3000-overallthroughput-50-60}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.40}{\ignorespaces Average channel utilization of 50 and 60 node networks\relax }}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{69}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{69}}
+\newlabel{fig:period-overallthroughput-50-60}{{5.40}{69}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.5}Channel Utilization and Fairness}{69}}
+\newlabel{fig:period1000-fairness-30-40}{{5.41a}{70}}
+\newlabel{sub@fig:period1000-fairness-30-40}{{(a)}{a}}
+\newlabel{fig:period2000-fairness-30-40}{{5.41b}{70}}
+\newlabel{sub@fig:period2000-fairness-30-40}{{(b)}{b}}
+\newlabel{fig:period3000-fairness-30-40}{{5.41c}{70}}
+\newlabel{sub@fig:period3000-fairness-30-40}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.41}{\ignorespaces Average standard deviation of channel utilization per node of 30 and 40 node networks\relax }}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{70}}
+\newlabel{fig:period-fairness-30-40}{{5.41}{70}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\newlabel{fig:period1000-fairness-50-60}{{5.42a}{70}}
+\newlabel{sub@fig:period1000-fairness-50-60}{{(a)}{a}}
+\newlabel{fig:period2000-fairness-50-60}{{5.42b}{70}}
+\newlabel{sub@fig:period2000-fairness-50-60}{{(b)}{b}}
+\newlabel{fig:period3000-fairness-50-60}{{5.42c}{70}}
+\newlabel{sub@fig:period3000-fairness-50-60}{{(c)}{c}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.42}{\ignorespaces Average standard deviation of channel utilization per node of 50 and 60 node networks\relax }}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T$ = 1000 ms}}}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$T$ = 2000 ms}}}{70}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T$ = 3000 ms}}}{70}}
+\newlabel{fig:period-fairness-50-60}{{5.42}{70}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.6}Overhead Optimization and Robustness to Loss}{71}}
+\@writefile{toc}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries  \relax \fontsize  {14.4}{18}\selectfont  } {\hspace  {-1cm}Chapter\hfill Page\hspace  {-0.1cm}} \fi }
+\@writefile{toc}{\vspace *{-0.5cm}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Summary}{71}}
+\newlabel{sec:multihop-summary}{{5.6}{71}}
+\newlabel{fig:beta-0}{{5.43a}{72}}
+\newlabel{sub@fig:beta-0}{{(a)}{a}}
+\newlabel{fig:beta-4}{{5.43b}{72}}
+\newlabel{sub@fig:beta-4}{{(b)}{b}}
+\newlabel{fig:beta-8}{{5.43c}{72}}
+\newlabel{sub@fig:beta-8}{{(c)}{c}}
+\newlabel{fig:beta-12}{{5.43d}{72}}
+\newlabel{sub@fig:beta-12}{{(d)}{d}}
+\newlabel{fig:beta-16}{{5.43e}{72}}
+\newlabel{sub@fig:beta-16}{{(e)}{e}}
+\newlabel{fig:beta-20}{{5.43f}{72}}
+\newlabel{sub@fig:beta-20}{{(f)}{f}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.43}{\ignorespaces Optimized M-DWARF: Varying saving gain from 0 to 20.\relax }}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$\beta $ = 0}}}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$\beta $ = 4}}}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$\beta $ = 8}}}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$\beta $ = 12}}}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$\beta $ = 16}}}{72}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$\beta $ = 20}}}{72}}
+\newlabel{fig:vary-saving}{{5.43}{72}}
+\@writefile{lof}{ \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage {\hspace  {-1cm}Figure\hfill Page\hspace  {-0.1cm}} \fi }
+\@setckpt{chapter5}{
+\setcounter{page}{74}
+\setcounter{equation}{3}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{glyphcounter}{178207}
+\setcounter{iclass}{184}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{43}
+\setcounter{table}{0}
+\setcounter{subsubsubsection}{0}
+\setcounter{bib}{0}
+\setcounter{TotalPage}{14}
+\setcounter{isAppendiced}{0}
+\setcounter{parentequation}{0}
+\setcounter{float@type}{8}
+\setcounter{algorithm}{0}
+\setcounter{ALC@line}{43}
+\setcounter{ALC@rem}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{KVtest}{0}
+\setcounter{subfigure}{0}
+\setcounter{subfigure@save}{6}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{subtable@save}{0}
+\setcounter{lotdepth}{1}
+\setcounter{NAT@ctr}{0}
+\setcounter{thm}{0}
+\setcounter{AcadYear}{2554}
+\setcounter{EngAcadYear}{2011}
+\setcounter{zf@famc@Garuda}{0}
+}
