@@ -5,351 +5,341 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Apicharttrisorn et~al.(2010)Apicharttrisorn, Choochaisri, and
-  Intanagonwiwat]{5614702}
-Kittipat Apicharttrisorn, Supasate Choochaisri, and Chalermek Intanagonwiwat.
-\newblock 2010.
-\newblock {Energy-Efficient Gradient Time Synchronization for Wireless Sensor
-  Networks}.
-\newblock In \emph{Computational Intelligence, Communication Systems and
-  Networks (CICSyN), 2010 Second International Conference on}, pp. 124--129.
-
-\bibitem[Boonpinon and Sudsang(2006)]{4141997}
-N~Boonpinon and A~Sudsang.
-\newblock 2006.
-\newblock {Heterogeneity Driven Circular Formation}.
-\newblock In \emph{Robotics and Biomimetics, 2006. ROBIO '06. IEEE
-  International Conference on}, pp. 971--976.
-
-\bibitem[Brakken-Thal(2007)]{gersheng}
-Sean Brakken-Thal.
-\newblock 2007, Gershgorin’s theorem for estimating eigenvalues.
-\newblock URL
-  http://buzzard.ups.edu/courses/2007spring/projects/brakkenthal-paper.pdf .
-
-\bibitem[Choochaisri et~al.(2010)Choochaisri, Niennarttrakul, Jenjaturong,
-  Intanagonwiwat, and Rattanamahattana]{senvm}
-Supasate Choochaisri, Vit Niennarttrakul, Sarun Jenjaturong, Chalermek
-  Intanagonwiwat, and Chotirat~Ann Rattanamahattana.
-\newblock 2010.
-\newblock {SENVM: a Server Environment Monitoring and Controlling System for a
-  Small Data Center Using Wireless Sensor Network}.
-\newblock In \emph{2010 International Computer Science and Engineering
-  Conference}.
+\bibitem[Brakken-Thal(2012)]{gersheng}
+Brakken-Thal, S. 2012.
+\newblock Gershgorin’s theorem for estimating eigenvalues [Online].
+\newblock Available from:
+  http://buzzard.ups.edu/courses/2007spring/projects/brakkenthal-paper.pdf
+  [2012,March].
 
 \bibitem[Cohen and Peleg(2008)]{cohen-08}
-Reuven Cohen and David Peleg.
+Cohen, R. and Peleg, D.
 \newblock 2008.
 \newblock Local spreading algorithms for autonomous robot systems.
-\newblock \emph{Theor. Comput. Sci.} 399\penalty0 ,1-2:\penalty0 71--82.
-\newblock ISSN 0304-3975.
+  \emph{Theoretical Computer Science} 399.1-2 (June 2008):
+\newblock  71--82.
 
 \bibitem[Degesys and Nagpal(2008)]{4663417}
-J~Degesys and R~Nagpal.
+Degesys, J. and Nagpal, R.
 \newblock 2008.
-\newblock {Towards Desynchronization of Multi-hop Topologies}.
-\newblock In \emph{Self-Adaptive and Self-Organizing Systems, 2008. SASO '08.
-  Second IEEE International Conference on}, pp. 129--138.
+\newblock Towards desynchronization of multi-hop topologies.
+\newblock In \emph{Proceedings of the 2008 Second IEEE International Conference
+  on Self-Adaptive and Self-Organizing Systems}, SASO '08, pp. 129--138.
+  Washington, DC, USA: IEEE Computer Society.
 
 \bibitem[Degesys et~al.(2007)Degesys, Rose, Patel, and Nagpal]{4379660}
-J~Degesys, I~Rose, A~Patel, and R~Nagpal.
+Degesys, J., Rose, I., Patel, A., and Nagpal, R.
 \newblock 2007.
-\newblock {DESYNC: Self-Organizing Desynchronization and TDMA on Wireless
-  Sensor Networks}.
-\newblock In \emph{Information Processing in Sensor Networks, 2007. IPSN 2007.
-  6th International Symposium on}, pp. 11--20.
+\newblock DESYNC: self-organizing desynchronization and tdma on wireless sensor
+  networks.
+\newblock In \emph{Proceedings of the 6th International Conference on
+  Information Processing in Sensor Networks}, IPSN '07, pp. 11--20. New York,
+  NY, USA: ACM.
 
 \bibitem[Ekanayake and Pathirana(2010)]{swarm}
-Samitha~W. Ekanayake and Pubudu~N. Pathirana.
+Ekanayake, S.~W. and Pathirana, P.~N.
 \newblock 2010.
-\newblock Formations of robotic swarm: An artificial force based approach.
-\newblock \emph{International Journal of Advanced Robotic Systems} .
-\newblock ISSN 1729-8806.
+\newblock Formations of robotic swarm: an artificial force based approach.
+  \emph{International Journal of Advanced Robotic Systems} 7.3 (September
+  2010):
+\newblock  173--190.
 
 \bibitem[Faucette(1996)]{abel}
-William~M Faucette.
+Faucette, W.~M.
 \newblock 1996.
 \newblock A geometric interpretation of the solution of the general quartic
-  polynomial.
-\newblock \emph{American Mathematical Monthly} 103\penalty0 ,1:\penalty0 51.
+  polynomial. \emph{American Mathematical Monthly} 103.1 (January 1996):
+\newblock  51--57.
 
 \bibitem[Flocchini et~al.(2008)Flocchini, Prencipe, and Santoro]{flocchini-08}
-Paola Flocchini, Giuseppe Prencipe, and Nicola Santoro.
+Flocchini, P., Prencipe, G., and Santoro, N.
 \newblock 2008.
-\newblock Self-deployment of mobile sensors on a ring.
-\newblock \emph{Theor. Comput. Sci.} 402\penalty0 ,1:\penalty0 67--80.
-\newblock ISSN 0304-3975.
+\newblock Self-deployment of mobile sensors on a ring. \emph{Theoretical
+  Computer Science} 402.1 (July 2008):
+\newblock  67--80.
 
 \bibitem[Ganeriwal et~al.(2003)Ganeriwal, Kumar, and
   Srivastava]{Ganeriwal:2003:TPS:958491.958508}
-Saurabh Ganeriwal, Ram Kumar, and Mani~B Srivastava.
+Ganeriwal, S., Kumar, R., and Srivastava, M.~B.
 \newblock 2003.
-\newblock {Timing-sync protocol for sensor networks}.
-\newblock In \emph{Proceedings of the 1st international conference on Embedded
-  networked sensor systems}, SenSys '03, pp. 138--149, New York, NY, USA. ACM.
-\newblock ISBN 1-58113-707-9.
+\newblock Timing-sync protocol for sensor networks.
+\newblock In \emph{Proceedings of the 1st International Conference on Embedded
+  Networked Sensor Systems}, SenSys '03, pp. 138--149. New York, NY, USA: ACM.
 
 \bibitem[Gershgorin(1931)]{gershger}
-Semyon~Aranovich Gershgorin.
+Gershgorin, S.~A.
 \newblock 1931.
-\newblock Über die abgrenzung der eigenwerte einer matrix.
-\newblock \emph{Bulletin de l'Académie des Sciences de l'URSS. Classe des
-  sciences mathématiques et na} 6:\penalty0 749--754.
+\newblock Über die abgrenzung der eigenwerte einer matrix. \emph{Bulletin de
+  l'Académie des Sciences de l'URSS. Classe des Sciences Mathématiques et
+  na} 6 (1931):
+\newblock  749--754.
 
 \bibitem[Gollakota and Katabi(2008)]{zigzag}
-Shyamnath Gollakota and Dina Katabi.
+Gollakota, S. and Katabi, D.
 \newblock 2008.
 \newblock Zigzag decoding: combating hidden terminals in wireless networks.
-\newblock In \emph{Proceedings of the ACM SIGCOMM 2008 conference on Data
-  communication}, SIGCOMM '08, pp. 159--170, New York, NY, USA. ACM.
-\newblock ISBN 978-1-60558-175-0.
+\newblock In \emph{Proceedings of the ACM SIGCOMM 2008 Conference on Data
+  Communication}, SIGCOMM '08, pp. 159--170. New York, NY, USA: ACM.
 
 \bibitem[Gong et~al.(2010)Gong, Liu, Chen, and Zhang]{edtdma}
-Haigang Gong, Ming Liu, Guihai Chen, and Xue Zhang.
+Gong, H., Liu, M., Chen, G., and Zhang, X.
 \newblock 2010.
 \newblock A study on event-driven tdma protocol for wireless sensor networks.
-\newblock \emph{EURASIP J. Wirel. Commun. Netw.} 2010:\penalty0 9:1--9:12.
-\newblock ISSN 1687-1472.
-\newblock \doi{http://dx.doi.org/10.1155/2010/169132}.
-\newblock URL http://dx.doi.org/10.1155/2010/169132 .
+  \emph{EURASIP Journal on Wireless Communications and Networking} 2010.9
+  (February 2010):
+\newblock  1--12.
 
 \bibitem[Gray(2001)]{circulant}
-Robert~M. Gray.
+Gray, R.~M.
 \newblock 2001.
-\newblock Toeplitz and circulant matrices: A review.
-\newblock Technical report.
+\newblock Toeplitz and circulant matrices: a review.
+\newblock Technical report, Deptartment of Electrical Engineering, Stanford
+  University.
 
 \bibitem[Gui and Mohapatra(2004)]{surveillance}
-Chao Gui and Prasant Mohapatra.
+Gui, C. and Mohapatra, P.
 \newblock 2004.
 \newblock Power conservation and quality of surveillance in target tracking
   sensor networks.
-\newblock In \emph{Proceedings of the 10th annual international conference on
-  Mobile computing and networking}, MobiCom '04, pp. 129--143, New York, NY,
-  USA. ACM.
-\newblock ISBN 1-58113-868-7.
+\newblock In \emph{Proceedings of the 10th Annual International Conference on
+  Mobile Computing and Networking}, MobiCom '04, pp. 129--143. New York, NY,
+  USA: ACM.
 
 \bibitem[He et~al.(2004)He, Krishnamurthy, Stankovic, Abdelzaher, Luo, Stoleru,
   Yan, Gu, Hui, and Krogh]{energy}
-Tian He, Sudha Krishnamurthy, John~A. Stankovic, Tarek Abdelzaher, Liqian Luo,
-  Radu Stoleru, Ting Yan, Lin Gu, Jonathan Hui, and Bruce Krogh.
+He, T., Krishnamurthy, S., Stankovic, J.~A., Abdelzaher, T., Luo, L., Stoleru,
+  R., Yan, T., Gu, L., Hui, J., and Krogh, B.
 \newblock 2004.
 \newblock Energy-efficient surveillance system using wireless sensor networks.
-\newblock In \emph{Proceedings of the 2nd international conference on Mobile
-  systems, applications, and services}, MobiSys '04, pp. 270--283, New York,
-  NY, USA. ACM.
-\newblock ISBN 1-58113-793-1.
+\newblock In \emph{Proceedings of the 2nd International Conference on Mobile
+  Systems, Applications, and Services}, MobiSys '04, pp. 270--283. New York,
+  NY, USA: ACM.
 
 \bibitem[Herman and Tixeuil(2004)]{herman}
-Ted Herman and Sébastien Tixeuil.
+Herman, T. and Tixeuil, S.
 \newblock 2004.
-\newblock A distributed tdma slot assignment algorithm for wireless sensor
+\newblock A distributed TDMA slot assignment algorithm for wireless sensor
   networks.
-\newblock In Sotiris Nikoletseas and José Rolim, editors, \emph{Algorithmic
-  Aspects of Wireless Sensor Networks}, volume 3121 of \emph{Lecture Notes in
-  Computer Science}, pp. 45--58. Springer Berlin / Heidelberg.
-\newblock ISBN 978-3-540-22476-1.
+\newblock In Nikoletseas, S. and Rolim, J. (ed.), \emph{Algorithmic Aspects of
+  Wireless Sensor Networks}, pp. 45--58. Heidelberg, Germany: Springer Berlin /
+  Heidelberg.
 
 \bibitem[Hirst and Macey(1997)]{hirst97}
-Holly~P. Hirst and Wade~T. Macey.
+Hirst, H.~P. and Macey, W.~T.
 \newblock 1997.
-\newblock Bounding the roots of polynomials.
-\newblock \emph{The College Mathematics Journal} 28\penalty0 ,4:\penalty0 pp.
-  292--295.
-\newblock ISSN 07468342.
+\newblock Bounding the roots of polynomials. \emph{The College Mathematics
+  Journal} 28.4 (September 1997):
+\newblock  pp. 292--295.
 
 \bibitem[Kang and Wong(2009)]{5062256}
-Hui Kang and J.L. Wong.
+Kang, H. and Wong, J.
 \newblock 2009.
 \newblock A localized multi-hop desynchronization algorithm for wireless sensor
   networks.
-\newblock In \emph{INFOCOM 2009, IEEE}, pp. 2906 --2910.
+\newblock In \emph{Proceedings of the IEEE INFOCOM}, pp. 2906 --2910.
+  Washington, DC, USA: IEEE Computer Society.
+
+\bibitem[Kittipat et~al.(2010)Kittipat, Supasate, and Chalermek]{5614702}
+Kittipat Apicharttrisorn, Supasate Choochaisri, and Chalermek Intanagonwiwat.
+\newblock 2010.
+\newblock Energy-efficient gradient time synchronization for wireless sensor
+  networks.
+\newblock In \emph{Proceedings of the 2010 2nd International Conference on
+  Computational Intelligence, Communication Systems and Networks}, CICSYN '10,
+  pp. 124--129. Washington, DC, USA: IEEE Computer Society.
+
+\bibitem[Levis et~al.(2005)Levis, Madden, Polastre, Szewczyk, Whitehouse, Woo,
+  Gay, Hill, Welsh, Brewer, and Culler]{levis-tinyos-04}
+Levis, P., Madden, S., Polastre, J., Szewczyk, R., Whitehouse, K., Woo, A.,
+  Gay, D., Hill, J., Welsh, M., Brewer, E., and Culler, D.
+\newblock 2005.
+\newblock TinyOS: an operating system for sensor networks.
+\newblock In Weber, W., Rabaey, J.~M., and Aarts, E. (ed.), \emph{Ambient
+  Intelligence}, pp. 115--148. Heidelberg, Germany: Springer Berlin Heidelberg.
 
 \bibitem[Levis et~al.(2003)Levis, Lee, Welsh, and Culler]{levis-tossim-03}
-Philip Levis, Nelson Lee, Matt Welsh, and David Culler.
+Levis, P., Lee, N., Welsh, M., and Culler, D.
 \newblock 2003.
-\newblock Tossim: accurate and scalable simulation of entire tinyos
+\newblock TOSSIM: accurate and scalable simulation of entire tinyos
   applications.
-\newblock In \emph{SenSys '03: Proceedings of the 1st international conference
-  on Embedded networked sensor systems}, pp. 126--137, New York, NY, USA. ACM.
-\newblock ISBN 1-58113-707-9.
-
-\bibitem[Levis et~al.(2004)Levis, Madden, Polastre, Szewczyk, Woo, Gay, Hill,
-  Welsh, Brewer, and Culler]{levis-tinyos-04}
-Philip Levis, Sam Madden, Joseph Polastre, Robert Szewczyk, Alec Woo, David
-  Gay, Jason Hill, Matt Welsh, Eric Brewer, and David Culler.
-\newblock 2004.
-\newblock Tinyos: An operating system for sensor networks.
-\newblock In \emph{in Ambient Intelligence}. Springer Verlag.
+\newblock In \emph{Proceedings of the 1st International Conference on Embedded
+  Networked Sensor Systems}, SenSys '03, pp. 126--137. New York, NY, USA: ACM.
 
 \bibitem[Mainwaring et~al.(2002)Mainwaring, Culler, Polastre, Szewczyk, and
   Anderson]{habitat}
-Alan Mainwaring, David Culler, Joseph Polastre, Robert Szewczyk, and John
-  Anderson.
+Mainwaring, A., Culler, D., Polastre, J., Szewczyk, R., and Anderson, J.
 \newblock 2002.
 \newblock Wireless sensor networks for habitat monitoring.
-\newblock In \emph{Proceedings of the 1st ACM international workshop on
-  Wireless sensor networks and applications}, WSNA '02, pp. 88--97, New York,
-  NY, USA. ACM.
-\newblock ISBN 1-58113-589-0.
+\newblock In \emph{Proceedings of the 1st ACM International Workshop on
+  Wireless Sensor Networks and Applications}, WSNA '02, pp. 88--97. New York,
+  NY, USA: ACM.
 
 \bibitem[Mar\'{o}ti et~al.(2004)Mar\'{o}ti, Kusy, Simon, and
   L\'{e}deczi]{Maroti:2004:FTS:1031495.1031501}
-Mikl\'{o}s Mar\'{o}ti, Branislav Kusy, Gyula Simon, and \'{A}kos L\'{e}deczi.
+Mar\'{o}ti, M., Kusy, B., Simon, G., and L\'{e}deczi, A.
 \newblock 2004.
-\newblock {The flooding time synchronization protocol}.
-\newblock In \emph{Proceedings of the 2nd international conference on Embedded
-  networked sensor systems}, SenSys '04, pp. 39--49, New York, NY, USA. ACM.
-\newblock ISBN 1-58113-879-2.
+\newblock The flooding time synchronization protocol.
+\newblock In \emph{Proceedings of the 2nd International Conference on Embedded
+  Networked Sensor Systems}, SenSys '04, pp. 39--49. New York, NY, USA: ACM.
 
 \bibitem[Mirollo and Strogatz(1990)]{MS1990}
-Renato~E. Mirollo and Steven~H. Strogatz.
+Mirollo, R.~E. and Strogatz, S.~H.
 \newblock 1990.
-\newblock Synchronization of pulse-coupled biological oscillators.
-\newblock \emph{SIAM J. Appl. Math.} 50:\penalty0 1645--1662.
-\newblock ISSN 0036-1399.
+\newblock Synchronization of pulse-coupled biological oscillators. \emph{SIAM
+  Journal on Applied Mathematics} 50 (November 1990):
+\newblock  1645--1662.
 
 \bibitem[Motskin et~al.(2009)Motskin, Roughgarden, Skraba, and Guibas]{5062165}
-A~Motskin, T~Roughgarden, P~Skraba, and L~Guibas.
+Motskin, A., Roughgarden, T., Skraba, P., and Guibas, L.
 \newblock 2009.
-\newblock {Lightweight Coloring and Desynchronization for Networks}.
-\newblock In \emph{INFOCOM 2009, IEEE}, pp. 2383--2391.
+\newblock Lightweight coloring and desynchronization for networks.
+\newblock In \emph{Proceedings of the IEEE INFOCOM}, INFOCOM '09, pp.
+  2383--2391. Washington, DC, USA: IEEE Computer Society.
 
 \bibitem[Mühlberger and Kolla(2009)]{MK09DESYNC}
-Clemens Mühlberger and Reiner Kolla.
+Mühlberger, C. and Kolla, R.
 \newblock 2009.
 \newblock Extended desynchronization for multi-hop topologies.
 \newblock Technical Report 460, Institut für Informatik, Universität
   Würzburg.
 
+\bibitem[Nuttapon and Attawith(2006)]{4141997}
+Nuttapon Boonpinon and Attawith Sudsang.
+\newblock 2006.
+\newblock Heterogeneity driven circular formation.
+\newblock In \emph{Proceedings of the IEEE International Conference onRobotics
+  and Biomimetics}, ROBIO '06, pp. 971--976. Washington, USA: IEEE Computer
+  Society.
+
 \bibitem[Parthasarathy and Gandhi(2005)]{Parthasarathy}
-Srinivasan Parthasarathy and Rajiv Gandhi.
+Parthasarathy, S. and Gandhi, R.
 \newblock 2005.
 \newblock Distributed algorithms for coloring and domination in wireless
   ad hoc networks.
-\newblock In Kamal Lodaya and Meena Mahajan, editors, \emph{FSTTCS 2004:
-  Foundations of Software Technology and Theoretical Computer Science}, volume
-  3328 of \emph{Lecture Notes in Computer Science}, pp. 447--459. Springer
-  Berlin / Heidelberg.
-\newblock ISBN 978-3-540-24058-7.
+\newblock In Lodaya, K. and Mahajan, M. (ed.), \emph{FSTTCS 2004: Foundations
+  of Software Technology and Theoretical Computer Science}, pp. 447--459.
+  Heidelberg, Germany: Springer Berlin / Heidelberg.
 
 \bibitem[Patel et~al.(2007)Patel, Degesys, and Nagpal]{4274893}
-A~Patel, J~Degesys, and R~Nagpal.
+Patel, A., Degesys, J., and Nagpal, R.
 \newblock 2007.
-\newblock {Desynchronization: The Theory of Self-Organizing Algorithms for
-  Round-Robin Scheduling}.
-\newblock In \emph{Self-Adaptive and Self-Organizing Systems, 2007. SASO '07.
-  First International Conference on}, pp. 87--96.
+\newblock Desynchronization: the theory of self-organizing algorithms for
+  round-robin scheduling.
+\newblock In \emph{Proceedings of the First International Conference on
+  Self-Adaptive and Self-Organizing Systems}, SASO '07, pp. 87--96. Washington,
+  DC, USA: IEEE Computer Society.
 
-\bibitem[Rajendran et~al.(2006)Rajendran, Obraczka, and
-  Garcia-Luna-Aceves]{trama}
-Venkatesh Rajendran, Katia Obraczka, and J.~J. Garcia-Luna-Aceves.
-\newblock 2006.
-\newblock Energy-efficient, collision-free medium access control for wireless
-  sensor networks.
-\newblock \emph{Wirel. Netw.} 12:\penalty0 63--78.
-\newblock ISSN 1022-0038.
-
-\bibitem[Settawatcharawanit et~al.(2012)Settawatcharawanit, Choochaisri,
-  Intanagonwiwat, and Rojviboonchai]{v-desync}
-Tossaphol Settawatcharawanit, Supasate Choochaisri, Chalermek Intanagonwiwat,
-  and Kultida Rojviboonchai.
-\newblock 2012.
-\newblock V-desync: Desynchronization for beacon broadcasting in vehicular
-  networks.
-\newblock In \emph{Proceedings of IEEE 75th Vehicular Technology Conference},
-  VTC2012-Spring.
-\newblock ISBN 978-1-60558-175-0.
-
-\bibitem[Sommer and Wattenhofer(2009)]{5211944}
-P~Sommer and R~Wattenhofer.
-\newblock 2009.
-\newblock {Gradient clock synchronization in wireless sensor networks}.
-\newblock In \emph{Information Processing in Sensor Networks, 2009. IPSN 2009.
-  International Conference on}, pp. 37--48.
-
-\bibitem[Souissi et~al.(2004)Souissi, Défago, and Katayama]{defago04}
-Samia Souissi, Xavier Défago, and Takuya Katayama.
-\newblock 2004.
-\newblock Convergence of a uniform circle formation algorithm for distributed
-  autonomous mobile robots.
-\newblock In \emph{Proceedings of the Joint Japan-Tunisia Workshop on Computer
-  Systems and Information Technology}, JT-CSIT'04.
-\newblock ISBN 978-1-60558-175-0.
-
-\bibitem[Spears et~al.(2005)Spears, Spears, Heil, Kerr, and
-  Hettiarachchi]{physicomimetics}
-William~M. Spears, Diana~F. Spears, Rodney Heil, Wesley Kerr, and Suranga
-  Hettiarachchi.
-\newblock 2005.
-\newblock An overview of physicomimetics.
-\newblock In \emph{Lecture Notes in Computer Science – State of the Art
-  Series}.
-
-\bibitem[Spears and Gordon(1999)]{810278}
-W.M. Spears and D.F. Gordon.
-\newblock 1999.
-\newblock Using artificial physics to control agents.
-\newblock In \emph{Information Intelligence and Systems, 1999. Proceedings.
-  1999 International Conference on}, pp. 281 --288.
-
-\bibitem[Suzuki and Yamashita(1996)]{suzuki-96}
-Ichiro Suzuki and Masafumi Yamashita.
-\newblock 1996.
-\newblock Distributed anonymous mobile robots-formation and agreement problems.
-\newblock In \emph{Proceedings of the 3rd International Colloquium on
-  Structural Information and Communication Complexity}, SIROCCO '96, pp.
-  313--330.
-\newblock ISBN 978-1-60558-175-0.
-
-\bibitem[Suzuki and Yamashita(1999)]{suzuki-99}
-Ichiro Suzuki and Masafumi Yamashita.
-\newblock 1999.
-\newblock Distributed anonymous mobile robots: Formation of geometric patterns.
-\newblock \emph{SIAM J. Comput.} 28\penalty0 ,4:\penalty0 1347--1363.
-\newblock ISSN 0097-5397.
-
-\bibitem[Taechalertpaisarn et~al.(2011)Taechalertpaisarn, Choochaisri, and
-  Intanagonwiwat]{desyncort}
-Pongpakdi Taechalertpaisarn, Supasate Choochaisri, and Chalermek
-  Intanagonwiwat.
+\bibitem[Pongpakdi et~al.(2011)Pongpakdi, Supasate, and Chalermek]{desyncort}
+Pongpakdi Taechalertpaisarn, Supasate Choochaisri, and Chalermek Intanagonwiwat.
 \newblock 2011.
 \newblock An orthodontics-inspired desynchronization algorithm for wireless
   sensor networks.
 \newblock In \emph{Proceedings of the 13th IEEE International Conference on
-  Communication Technology}.
-\newblock ISBN 978-1-60558-175-0.
+  Communication Technology}, ICCT '11, pp. 631--636. Washington, DC, USA: IEEE
+  Computer Society.
+
+\bibitem[Rajendran et~al.(2003)Rajendran, Obraczka, and
+  Garcia-Luna-Aceves]{trama}
+Rajendran, V., Obraczka, K., and Garcia-Luna-Aceves, J.~J.
+\newblock 2003.
+\newblock Energy-efficient collision-free medium access control for wireless
+  sensor networks.
+\newblock In \emph{Proceedings of the 1st International Conference on Embedded
+  Networked Sensor Systems}, SenSys '03, pp. 181--192. New York, NY, USA: ACM.
+
+\bibitem[Sommer and Wattenhofer(2009)]{5211944}
+Sommer, P. and Wattenhofer, R.
+\newblock 2009.
+\newblock Gradient clock synchronization in wireless sensor networks.
+\newblock In \emph{Proceedings of the 2009 International Conference on
+  Information Processing in Sensor Networks}, IPSN '09, pp. 37--48. Washington,
+  DC, USA: IEEE Computer Society.
+
+\bibitem[Souissi et~al.(2004)Souissi, Défago, and Katayama]{defago04}
+Souissi, S., Défago, X., and Katayama, T.
+\newblock 2004.
+\newblock Convergence of a uniform circle formation algorithm for distributed
+  autonomous mobile robots.
+\newblock In \emph{Proceedings of the Joint Japan-Tunisia Workshop on Computer
+  Systems and Information Technology}, JT-CSIT'04, pp. 554--560. Tokyo, Japan:
+  The University of Electro-Communications.
+
+\bibitem[Spears et~al.(2005)Spears, Spears, Heil, Kerr, and
+  Hettiarachchi]{physicomimetics}
+Spears, W., Spears, D., Heil, R., Kerr, W., and Hettiarachchi, S.
+\newblock 2005.
+\newblock An overview of physicomimetics.
+\newblock In Sahin, E. and Spears, W. (ed.), \emph{Swarm Robotics}, pp. 84--97.
+  Heidelberg, Germany: Springer Berlin / Heidelberg.
+
+\bibitem[Spears and Gordon(1999)]{810278}
+Spears, W. and Gordon, D.
+\newblock 1999.
+\newblock Using artificial physics to control agents.
+\newblock In \emph{Proceedings of the International Conference on Information
+  Intelligence and Systems}, pp. 281 --288. Washington, USA: IEEE Computer
+  Society.
+
+\bibitem[Supasate et~al.(2010)Supasate, Vit, Sarun, Chalermek, and
+  Chotirat~Ann]{senvm}
+Supasate Choochaisri, Vit Niennarttrakul, Sarun Jenjaturong, Chalermek Intanagonwiwat, and Chotirat Ann Rattanamahattana.
+\newblock 2010.
+\newblock SENVM: a server environment monitoring and controlling system for a
+  small data center using wireless sensor network.
+\newblock In \emph{Proceedings of the International Computer Science and
+  Engineering Conference}, ICSEC '10, pp. 23--28. Chiang Mai, Thailand: Chiang
+  Mai University.
+
+\bibitem[Suzuki and Yamashita(1996)]{suzuki-96}
+Suzuki, I. and Yamashita, M.
+\newblock 1996.
+\newblock Distributed anonymous mobile robots-formation and agreement problems.
+\newblock In \emph{Proceedings of the 3rd International Colloquium on
+  Structural Information and Communication Complexity}, SIROCCO '96, pp.
+  313--330. Heidelberg, Germany: Springer.
+
+\bibitem[Suzuki and Yamashita(1999)]{suzuki-99}
+Suzuki, I. and Yamashita, M.
+\newblock 1999.
+\newblock Distributed anonymous mobile robots: formation of geometric patterns.
+  \emph{SIAM Journal on Computing} 28.4 (March 1999):
+\newblock  1347--1363.
+
+\bibitem[Tossaphol et~al.(2012)Tossaphol, Supasate, Chalermek, and
+  Kultida]{v-desync}
+Tossaphol Settawatcharawanit, Supasate Choochaisri, Chalermek Intanagonwiwat, and Kultida Rojviboonchai.
+\newblock 2012.
+\newblock V-desync: Desynchronization for beacon broadcasting in vehicular
+  networks.
+\newblock In \emph{Proceedings of IEEE 75th Vehicular Technology Conference},
+  VTC2012-Spring. Washington, DC, USA: IEEE Computer Society.
 
 \bibitem[Wang et~al.(2010)Wang, Zeng, and Tan]{artphysics}
-Yan Wang, Jian-chao Zeng, and Ying Tan.
+Wang, Y., Zeng, J.-c., and Tan, Y.
 \newblock 2010.
 \newblock An artificial physics optimization algorithm for multi-objective
   problems based on virtual force sorting proceedings.
-\newblock In Bijaya Panigrahi, Swagatam Das, Ponnuthurai Suganthan, and
-  Subhransu Dash, editors, \emph{Swarm, Evolutionary, and Memetic Computing},
-  volume 6466 of \emph{Lecture Notes in Computer Science}, pp. 615--622.
+\newblock In Panigrahi, B., Das, S., Suganthan, P., and Dash, S. (ed.),
+  \emph{Swarm, Evolutionary, and Memetic Computing}, volume 6466 of
+  \emph{Lecture Notes in Computer Science}, pp. 615--622. Heidelberg, Germany:
   Springer Berlin / Heidelberg.
-\newblock ISBN 978-3-642-17562-6.
 
 \bibitem[Werner-Allen et~al.(2005)Werner-Allen, Tewari, Patel, Welsh, and
   Nagpal]{Werner-Allen}
-Geoffrey Werner-Allen, Geetika Tewari, Ankit Patel, Matt Welsh, and Radhika
-  Nagpal.
+Werner-Allen, G., Tewari, G., Patel, A., Welsh, M., and Nagpal, R.
 \newblock 2005.
-\newblock {Firefly-inspired sensor network synchronicity with realistic radio
-  effects}.
-\newblock In \emph{Proceedings of the 3rd international conference on Embedded
-  networked sensor systems}, SenSys '05, pp. 142--153, New York, NY, USA. ACM.
-\newblock ISBN 1-59593-054-X.
+\newblock Firefly-inspired sensor network synchronicity with realistic radio
+  effects.
+\newblock In \emph{Proceedings of the 3rd International Conference on Embedded
+  Networked Sensor Systems}, SenSys '05, pp. 142--153. New York, NY, USA: ACM.
 
 \bibitem[Xu et~al.(2004)Xu, Rangwala, Chintalapudi, Ganesan, Broad, Govindan,
   and Estrin]{structure}
-Ning Xu, Sumit Rangwala, Krishna~Kant Chintalapudi, Deepak Ganesan, Alan Broad,
-  Ramesh Govindan, and Deborah Estrin.
+Xu, N., Rangwala, S., Chintalapudi, K.~K., Ganesan, D., Broad, A., Govindan,
+  R., and Estrin, D.
 \newblock 2004.
 \newblock A wireless sensor network for structural monitoring.
-\newblock In \emph{Proceedings of the 2nd international conference on Embedded
-  networked sensor systems}, SenSys '04, pp. 13--24, New York, NY, USA. ACM.
-\newblock ISBN 1-58113-879-2.
+\newblock In \emph{Proceedings of the 2nd International Conference on Embedded
+  Networked Sensor Systems}, SenSys '04, pp. 13--24. New York, NY, USA: ACM.
 
 \end{thebibliography}

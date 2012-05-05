@@ -69,9 +69,9 @@
 %% Correct bad hyphenation here
 \hyphenation{net-works physico-mi-metics kij-sirikul cha-lerm-ek inta-nagon-wiwat tiny-os}
 
-%%-------------------------------------------------------------------------------
-%%-                         SETTING THESIS PARAMETERS                           -
-%%-------------------------------------------------------------------------------
+%%------------------------------------------------------------
+%%-               SETTING THESIS PARAMETERS                  -
+%%------------------------------------------------------------
 \thesistitle                            % set the thesis tile (use {\wbr} for word break)
 {ขั้นตอนวิธีการไม่ประสานเวลา{\wbr}เลียนแบบ{\wbr}หลักการทางฟิสิกส์{\wbr}โดย{\wbr}ปราศ{\wbr}จากความรู้ทาง{\wbr}เวลาแบบครอบคลุมสำหรับเครือข่ายตัวรับรู้ไร้สาย} % Thai Title
 {A Physicomimetics Desynchronization Algorithm without Global Time Knowledge for Wireless Sensor Networks}      % English title (auto upper case)
@@ -87,14 +87,16 @@
 {ผู้ช่วยศาสตราจารย์ ดร. เฉลิมเอก อินทนากรวิวัฒน์}               % Advisor name in Thai
 {ผศ. ดร. เฉลิมเอก อินทนากรวิวัฒน์}                          % Advisor name in Thai with abbrev. title
 {Assistant Professor Chalermek Intanagonwiwat, Ph.D.}  % Advisor name in English
-{Asst. Prof. Chalermek Intanagonwiwat, Ph.D.}          % Advisor name in English with abbrev. title
+{ASST. PROF. CHALERMEK INTANAGONWIWAT, Ph.D.}          % Advisor name in English with abbrev. title 
+                                                       % (Capital letters except Ph.D.))
 
 %% If the thesis has co-advisor, use this optional command
 %\coadvisor
 %{ผู้ช่วยศาสตราจารย์ ดร. เฉลิมเอก อินทนากรวิวัฒน์}  % Co-Advisor name in Thai
 %{ผศ. ดร. เฉลิมเอก อินทนากรวิวัฒน์}  % Co-Advisor name in Thai with abbrev. title
 %{Assistant Professor Chalermek Intanagonwiwat, Ph.D.}  % Co-Advisor name in English
-%{Asst. Prof. Chalermek Intanagonwiwat, Ph.D.}          % Co-Advisor name in English with abbrev. title
+%{ASST. PROF. CHALERMEK INTANAGONWIWAT, Ph.D.}          % Co-Advisor name in English with abbrev. title 
+                                                       % (Capital letters except Ph.D.))
 
 \faculty                                % set the faculty
 {วิศวกรรมศาสตร์}                          % name of the faculty in Thai
@@ -161,11 +163,12 @@
 \newpage
 
 %% English Abstract Section
-\include{abstractthai}
+\include{abstractenglish}
 \newpage
 
 % Acknowledgement Section
 \include{acknowledgement}
+\newpage
 
 % Table of Content
 \tableofcontents        % generate table of content
@@ -186,12 +189,13 @@
 %% References Section (must be placed before appendices)
 \ULforem %%%
 \setlength{\bibhang}{1.5cm}
-\bibliographystyle{chula_nat}
+\bibliographystyle{chulanat}
 \bibliography{supasate} % speficy your bibtex file here (this example is supasate_dissertation.bib).
 
 \normalem
 
 %% Appendix Section
+\numappendices{2}        % the number of appendices
 \startappendix
 \include{appendix1}
 \include{appendix2}

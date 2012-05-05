@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Changelog
+%% May 3, 2012 : Supasate Choochaisri
+%%  - Add a parameter to handle the uppercase of advisor's title except "Ph.D."
+%%  - Rename chula_nat.bst to chulanat.bst to make it more compatible to LaTeX 
+%%    compiler.
+%%  - Add a "numappendices" parameter to handle choosing "Appendix" or "Appendices"
+%%  - Fix indentation of the Thai abstract page.
+%%  - Modify the bibtex style file (chulanat.bst) to handle Chula bibliography 
+%%    format.
+%%
+%% Apr 19, 2012 : Supasate Choochaisri
+%%  - Use XeTeX to support UTF-8 and OpenType font.
+%%  - Use ucharclasses package to automatically switch language without 
+%%    explicitly issuing switch command.
+%%  - Capitalize Advisor name at the English abstract page.
+%%  - Add option for Advisor/Co-Advisor name with abbreviated title to be used
+%%    at the English abstract page. 
+%%  - Write Deparment, Field of Study, and Academic year on dotted underlines
+%%    at the abstract page.
+%%  - Add semi-colon after Academic year at the English abstract page.
+%%  - Move the word "Fulfillment" to the second line at the Approval page.
+%%  - Adjust top margin to 1.5", bottom margin to 1.0" with geometry package.
+%%  - Add line break for a long thesis title at the cover page.
+%%
+%% Feb 25, 2007: Nattee Niparnan
+%%  - Change heading mechanism.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

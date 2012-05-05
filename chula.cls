@@ -16,7 +16,16 @@
 %% You can freely modified this file.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Change log
+%% Changelog
+%% May 3, 2012 : Supasate Choochaisri
+%%  - Add a parameter to handle the uppercase of advisor's title except "Ph.D."
+%%  - Rename chula_nat.bst to chulanat.bst to make it more compatible to LaTeX 
+%%    compiler.
+%%  - Add a "numappendices" parameter to handle choosing "Appendix" or "Appendices"
+%%  - Fix indentation of the Thai abstract page.
+%%  - Modify the bibtex style file (chulanat.bst) to handle Chula bibliography 
+%%    format.
+%%
 %% Apr 19, 2012 : Supasate Choochaisri
 %%  - Use XeTeX to support UTF-8 and OpenType font.
 %%  - Use ucharclasses package to automatically switch language without 
@@ -30,6 +39,7 @@
 %%  - Move the word "Fulfillment" to the second line at the Approval page.
 %%  - Adjust top margin to 1.5", bottom margin to 1.0" with geometry package.
 %%  - Add line break for a long thesis title at the cover page.
+%%
 %% Feb 25, 2007: Nattee Niparnan
 %%  - Change heading mechanism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,7 +178,9 @@
       \def\bibname{References}%
       \def\chaptername{Chapter}%
       \def\appendixname{Appendix}%
-      \def\appendixpage{APPENDICES}%
+      \def\appendicesname{Appendices}%
+      \def\appendixpage{APPENDIX}%
+      \def\appendicespage{APPENDICES}%
       \def\contentsname{Contents}%
       \def\listfigurename{List of Figures}%
       \def\listtablename{List of Tables}%
@@ -206,6 +218,11 @@
         \draw[loosely dotted, thick] (todotted.south west) -- (todotted.south east);
     }%
 }%
+
+%% to choose the word between Appendix or Appendices
+\newcommand{\numappendices}[1]{
+  \newcommand{\@numappendices}{#1}
+}
 
 %% additional command for setting the first few pages of the thesis
 %% please refer to the accompanying bare_thesis.tex for the example
@@ -327,7 +344,11 @@
   \thispagestyle{empty}
   \centerline{~}
   \vfill
-  \centerline{\Large \appendixpage}
+  \ifnum \@numappendices > 1
+    \centerline{\Large \appendicespage}
+  \else
+    \centerline{\Large \appendixpage}
+  \fi
   \vfill
   \centerline{~}
 }
@@ -389,7 +410,11 @@
                             % at the latest update, THEY required that we have dotted line
                             %\addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendixname}{\@ThaiFont\thepage}
                             \addtocontents{toc}{\protect\vspace*{-0.5cm}}
-                            \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendixname}{\@ThaiFont\thepage}}
+                            \ifnum \@numappendices > 1
+                                \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendicesname}{\@ThaiFont\thepage}}
+                            \else
+                                \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendixname}{\@ThaiFont\thepage}}
+                            \fi
                           \fi
                       \fi
                       \ifnum \c@isAppendiced = 1
@@ -523,7 +548,6 @@
 
 \renewcommand{\tableofcontents}{
     \selectthesislang
-    \newpage
     \thispagestyle{empty}
     \toccont
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
@@ -852,9 +876,9 @@ Copyright of Chulalongkorn University
     } {
     \vfill
 
-    \noindent
     %\renewcommand{\arraystretch}{1.0}
     
+    \noindent
     \begin{tabular}{@{}p{6cm}p{8.3cm}@{}}
             & \\
         {ภาควิชา} \dotfill\udot{\@ThaiDept}\dotfill  & {ลายมือชื่อนิสิต} \dotfill \\
@@ -890,7 +914,7 @@ Copyright of Chulalongkorn University
     \vspace{-\parskip}
     %\noindent
     \hangindent = 1.0 cm \hangafter = 1
-    \uppercase{\@EnglishAuthorUP} : \@EnglishTitle. ADVISOR : \uppercase{\@EnglishAdvisorShortUP},
+    \uppercase{\@EnglishAuthorUP} : \@EnglishTitle. ADVISOR : \uppercase{\@EnglishAdvisorShort},
     {\if@coadvisor THESIS COADVISOR : \uppercase{\@EnglishCoAdvisorUP},\fi } \ref{@TheLastPage} pp.
 
     } {

@@ -4,7 +4,7 @@
 \select@language {english}
  \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries \relax \fontsize {14.4}{18}\selectfont } {\hspace {-1cm}Chapter\hfill Page\hspace {-0.1cm}} \fi 
 \vspace *{-0.5cm}
-\contentsline {nchapter}{\bfseries Abstract (Thai)}{v}
+\contentsline {nchapter}{\bfseries Abstract (Thai)}{iv}
 \select@language {english}
 \select@language {english}
 \select@language {english}
@@ -13,13 +13,7 @@
 \select@language {english}
  \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries \relax \fontsize {14.4}{18}\selectfont } {\hspace {-1cm}Chapter\hfill Page\hspace {-0.1cm}} \fi 
 \vspace *{-0.5cm}
-\contentsline {nchapter}{\bfseries Abstract (Thai)}{v}
-\select@language {english}
-\select@language {english}
-\select@language {english}
-\select@language {english}
-\select@language {english}
-\select@language {english}
+\contentsline {nchapter}{\bfseries Abstract (English)}{v}
  \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries \relax \fontsize {14.4}{18}\selectfont } {\hspace {-1cm}Chapter\hfill Page\hspace {-0.1cm}} \fi 
 \vspace *{-0.5cm}
 \contentsline {nchapter}{\bfseries Acknowledgements}{vi}
@@ -229,7 +223,7 @@
 {\setlength {\tocnwidthchap }{10.0em}}
  \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries \relax \fontsize {14.4}{18}\selectfont } {\hspace {-1cm}Chapter\hfill Page\hspace {-0.1cm}} \fi 
 \vspace *{-0.5cm}
-\contentsline {nchapter}{\bfseries Appendix}{102}
+\contentsline {nchapter}{\bfseries Appendices}{102}
 \vspace *{-0.5cm}
  \setlength {\pageleft }{\textheight - \pagetotal } \ifdim \pageleft < 1cm \newpage \centerline {\bfseries \relax \fontsize {14.4}{18}\selectfont } {\hspace {-1cm}Chapter\hfill Page\hspace {-0.1cm}} \fi 
 \vspace *{0cm}

@@ -1,11 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: supasate.aux
 A level-1 auxiliary file: abstractthai.aux
-Already encountered file abstractthai.aux
----line 16 of file supasate.aux
- : \@input{abstractthai.aux
- :                         }
-I'm skipping whatever remains of this command
+A level-1 auxiliary file: abstractenglish.aux
 A level-1 auxiliary file: acknowledgement.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
@@ -14,53 +10,68 @@ A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: chapter6.aux
 A level-1 auxiliary file: chapter7.aux
-The style file: chula_nat.bst
+The style file: chulanat.bst
 A level-1 auxiliary file: appendix1.aux
 A level-1 auxiliary file: appendix2.aux
 A level-1 auxiliary file: biography.aux
 Database file #1: supasate.bib
-Warning--entry type for "gersheng" isn't style-file defined
---line 28 of file supasate.bib
-Warning--empty institution in circulant
+You can't pop an empty literal stack for entry cohen-08
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry swarm
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry abel
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry flocchini-08
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry gershger
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry edtdma
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry hirst97
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry MS1990
+while executing---line 1517 of file chulanat.bst
+You can't pop an empty literal stack for entry suzuki-99
+while executing---line 1517 of file chulanat.bst
 You've used 41 entries,
-            2792 wiz_defined-function locations,
-            878 strings with 14085 characters,
-and the built_in function-call counts, 23220 in all, are:
-= -- 2262
-> -- 1324
-< -- 46
-+ -- 442
-- -- 401
-* -- 1696
-:= -- 3499
-add.period$ -- 202
+            2781 wiz_defined-function locations,
+            929 strings with 15062 characters,
+and the built_in function-call counts, 23470 in all, are:
+= -- 2358
+> -- 1352
+< -- 59
++ -- 450
+- -- 409
+* -- 1695
+:= -- 3536
+add.period$ -- 163
 call.type$ -- 41
-change.case$ -- 214
+change.case$ -- 215
 chr.to.int$ -- 41
-cite$ -- 83
-duplicate$ -- 1057
-empty$ -- 1775
-format.name$ -- 474
-if$ -- 5113
+cite$ -- 82
+duplicate$ -- 959
+empty$ -- 1494
+format.name$ -- 482
+if$ -- 5105
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 38
-newline$ -- 279
-num.names$ -- 170
-pop$ -- 520
+missing$ -- 29
+newline$ -- 253
+num.names$ -- 174
+pop$ -- 325
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 173
 quote$ -- 0
-skip$ -- 836
+skip$ -- 989
 stack$ -- 0
-substring$ -- 947
-swap$ -- 254
-text.length$ -- 26
+substring$ -- 1187
+swap$ -- 367
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 451
-warning$ -- 1
-while$ -- 203
+warning$ -- 0
+while$ -- 231
 width$ -- 0
-write$ -- 650
-(There was 1 error message)
+write$ -- 808
+(There were 9 error messages)
