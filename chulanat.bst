@@ -1,7 +1,10 @@
-%% File: `plainnat.bst'
-%% A modification of `plain.bst' for use with natbib package 
+%% File: `chulanat.bst'
+%% A modification of `plainnat.bst' for use with natbib package 
 %%
-%% Copyright 1993-2007 Patrick W Daly
+%% Author: Supasate Choochaisri
+%%   - modify to handle various Chula reference formats.
+%%
+%% Copyright of `plainnat.bst' 1993-2007 Patrick W Daly
 %% Max-Planck-Institut f\"ur Sonnensystemforschung
 %% Max-Planck-Str. 2
 %% D-37191 Katlenburg-Lindau
@@ -219,7 +222,6 @@ FUNCTION {format.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    %{ s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
     { s nameptr "{vv~}{ll}{, f.}{, jj.}" format.name$ 't :=
       nameptr #1 >
         { namesleft #1 >
@@ -262,8 +264,6 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-        %{ ", editors" * }
-        %{ ", editor" * }
         { " (ed.)" * }
         { " (ed.)" * }
       if$
@@ -288,7 +288,6 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    %{ new.block "URL " url * " " * }
     { new.block "Available from: " url * " " * }
   if$
 }
@@ -730,26 +729,6 @@ FUNCTION {article}
   format.year "year" output.check
   new.block
   format.title "title" output.check
-  %new.block
-  %crossref missing$
-  %  { journal emphasize " " *
-  %    eid empty$
-  %      { format.vol.num.pages}
-  %      { format.vol.num.eid}
-  %    if$
-  %    *
-  %    "journal" output.check
-  %    
-  %  }
-  %  { format.article.crossref 
-  %    eid empty$
-  %      { format.pages  }
-  %      { format.eid  }
-  %    if$
-  %    *
-  %    output.nonnull
-  %  }
-  %if$
   write$ ". "
   new.block
   write$ journal emphasize " " *
@@ -771,11 +750,6 @@ FUNCTION {article}
   write$ "):"
   write$ ""
   format.article.pages output
-  %format.issn output
-  %format.doi output
-  %format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -889,9 +863,6 @@ FUNCTION {incollection}
       format.bvolume output
       format.number.series output
       format.chapter.pages output
-      %new.sentence
-      %address output
-      %publisher "publisher" output.check
       write$ ". "
       new.block
       write$ address
@@ -903,11 +874,6 @@ FUNCTION {incollection}
       format.chapter.pages output
     }
   if$
-  %format.isbn output
-  %format.doi output
-  %format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -925,18 +891,6 @@ FUNCTION {inproceedings}
       format.bvolume output
       format.number.series output
       format.pages output
-      %address empty$
-      %  { %organization publisher new.sentence.checkb
-      %    %organization output
-      %    %publisher output
-      %  }
-      %  { address output
-      %    %address output.nonnull
-      %    %new.sentence
-      %    %organization output
-      %    %publisher output
-      %  }
-      %if$
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
@@ -947,11 +901,6 @@ FUNCTION {inproceedings}
   write$ address
   write$ ": "
   write$ publisher
-  %format.isbn output
-  %format.doi output
-  %format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -970,8 +919,6 @@ FUNCTION {manual}
   address output
   format.edition output
   format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -988,8 +935,6 @@ FUNCTION {mastersthesis}
   school "school" output.check
   address output
   format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -998,14 +943,12 @@ FUNCTION {misc}
   format.authors output
   author format.key output
   title howpublished new.block.checkb
-  %format.year "year" output.check
   new.block
   write$ " "
   write$ year
   format.title output
   howpublished new.block.checka
   howpublished output
-  %format.issn output
   new.block
   url empty$
      { }
@@ -1018,15 +961,6 @@ FUNCTION {misc}
        write$ "]"
      }
   if$
-  %write "[Online]."
-  %format.url output
-  %write$ "["
-  %write$ year
-  %write$ ","
-  %write$ month 
-  %write$ "]"
-  %new.block
-  %note output
   fin.entry
   empty.misc.check
 }
@@ -1044,8 +978,6 @@ FUNCTION {phdthesis}
   school "school" output.check
   address output
   format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -1065,8 +997,6 @@ FUNCTION {proceedings}
   format.isbn output
   format.doi output
   format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -1082,9 +1012,6 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" output.check
   address output
-  %format.url output
-  %new.block
-  %note output
   fin.entry
 }
 
@@ -1094,8 +1021,6 @@ FUNCTION {unpublished}
   author format.key output
   new.block
   format.title "title" output.check
-  %new.block
-  %note "note" output.check
   format.date output
   format.url output
   fin.entry

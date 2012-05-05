@@ -158,8 +158,6 @@
       \def\seename{ดู}%
       \def\alsoname{ดูเพิ่มเติม}%
       \def\proofname{พิสูจน์}%
-%      \def\figurename{รูปที่}
-%      \def\tablename{ตารางที่}
     }
 \else
   %% my new string
@@ -358,12 +356,6 @@
 %%%%%%%%%%%%%%%
 % page layout %
 %%%%%%%%%%%%%%%
-%\setlength{\hoffset}{1.00cm}           %  left-side margin = 1 inch + hoffset
-%\setlength{\voffset}{-1.00cm}           %  top-side margin = 1 inch + voffset
-%\setlength{\topmargin}{0.00cm}         %
-%\setlength{\oddsidemargin}{0.00cm}     %
-%\setlength{\evensidemargin}{0.00cm}    %
-%\setlength{\textwidth}{15.00cm}        %  text-area width
 \setlength{\textheight}{25.00cm}       %  text-area height
 \geometry{paperwidth=8.27in,paperheight=11.69in,top=1.5in,bottom=1in,left=1.5in,right=1.0in} % set paper size and page margin
 \setlength{\headheight}{0.00cm}        %
@@ -404,11 +396,6 @@
                             \addtocontents{toc}{\protect\leftline{\bfseries \chaptername}}
                           \else
                             \toccont
-                            %\addtocontents{toc}{\protect\vspace*{0.5cm}}
-
-                            %\addtocontents{toc}{\protect\leftline{\bfseries \appendixname}}
-                            % at the latest update, THEY required that we have dotted line
-                            %\addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendixname}{\@ThaiFont\thepage}
                             \addtocontents{toc}{\protect\vspace*{-0.5cm}}
                             \ifnum \@numappendices > 1
                                 \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \appendicesname}{\@ThaiFont\thepage}}
@@ -457,7 +444,6 @@
         \else
           \Roman{chapter}
         \fi
-      %chapter name
     \else
         \if@thaithesis
           \thaiAlph{chapter}
@@ -498,11 +484,6 @@
 \renewcommand\@tocrmarg{1.5cm}         % toc's parameter
 \renewcommand\@dotsep{4}               % toc's parameter
 \addtocontents{toc}{\protect\rightline{\pagename}}
-
-%\addtocontents{lot}{\protect\hspace{-1cm}\tablename\hfill\pagename\hspace{-1.0cm}\protect\vspace*{-0.5cm}} %a
-%\addtocontents{lof}{\protect\hspace{-1cm}\figurename\hfill\pagename\hspace{-1.0cm}\protect\vspace*{-0.5cm}} %
-%\addtocontents{lot}{\tablename\hfill\pagename\protect\vspace*{-0.5cm}} %a
-%\addtocontents{lof}{\figurename\hfill\pagename\protect\vspace*{-0.5cm}} %
 
 \newlength{\tocindentchap}
 \newlength{\tocnwidthchap}
@@ -553,7 +534,6 @@
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \contentsname}{\@ThaiFont\thepage}}
     \centerline{\bfseries\Large \contentsname}
-    %\vspace*{0.5cm}
     \@starttoc{toc}
 }
 \newcommand{\toccont}{
@@ -602,7 +582,6 @@
 \vskip\belowcaptionskip}
 
 \renewcommand{\listoftables}{
-%    \selectthesislang
     \toccont
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \listtablename}{\@ThaiFont\thepage}}
@@ -618,8 +597,6 @@
         \protect\ifdim \protect\pageleft < 1cm
             \protect\newpage
             {\hspace{-1cm}\tablename\hfill\pagename\hspace{-0.1cm}}
-            %\rightline{\pagename}
-            %\vspace*{-0.5cm}
         \protect\fi
         }
 }
@@ -640,21 +617,7 @@
     \end@float
 }
 
-
-%\renewenvironment{subfigure}{
-%    \@float{subfigure}
-%}{
-%    \lofcont
-%    \end@float
-%}
-%\renewenvironment{subfloat}{
-%	\@float(subfloat}
-%}{
-%    \lofcont
-%    \end@float
-%}
 \renewcommand{\listoffigures}{
-%    \selectthesislang                           
     \toccont
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \listfigurename}{\@ThaiFont\thepage}}
@@ -666,10 +629,7 @@
     %% my new attempt
     \addtocontents{lof}{\protect\setlength{\parskip}{0.0cm}}           %  distance between paragraphs
 
-    %\addtocontents{lof}{\protect\setlength{\headheight}{10.0cm}}           %  distance between paragraphs
     \addtocontents{lof}{\protect\thispagestyle{myheadings}}
-
-    %\addtocontents{lof}{\protect\markboth{1234}{4321}}           %  distance between paragraphs
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % save number of roman pages %
@@ -683,8 +643,6 @@
         \protect\ifdim \protect\pageleft < 1cm
             \protect\newpage
             {\hspace{-1cm}\figurename\hfill\pagename\hspace{-0.1cm}}
-%            \protect\centerline{\bfseries\Large }
-%            \rightline{\pagename}
        \protect\fi
     }
 }
@@ -700,19 +658,18 @@
 %%%%%%%%%%%%%
 \newcommand\e[1]{{\normalem \emph{#1}}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Front matter commands
 %%
 %% These commands generate the first few pages of the thesis, such as
 %% Thai Title, English Title, Committee Page, Abstract,
 %% Acknowledgement, etc.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\makethaicover}{
     \fontsize{11}{15}\selectfont
     \thispagestyle{empty}
     \centerline{ \begin{tabular}{p{14cm}}\centering\@ThaiTitle\end{tabular} }
-    %\vspace{7cm}
     \vfill
     \centerline{\@ThaiAuthorTitle\@ThaiAuthor}
     \vspace{1cm}
@@ -746,7 +703,6 @@ Copyright of Chulalongkorn University
 
 
 \newcommand{\ThaiCommittee}[1]{
-%    \selectthesislang
     \fontsize{11}{13.2}\selectfont
     \thispagestyle{empty}
     \noindent
@@ -786,7 +742,6 @@ Copyright of Chulalongkorn University
 }
 
 \newcommand{\EnglishCommittee}{
-%    \selectthesislang
     \fontsize{11}{13.2}\selectfont
     \setlength{\textwidth}{16.50cm}
     \thispagestyle{empty}
@@ -866,7 +821,6 @@ Copyright of Chulalongkorn University
     \@ThaiFont
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries\@AbstractThaiString}{\@ThaiFont\thepage}}
-    %\fontsize{11}{0.65cm}
     \noindent
     \hangindent = 1.0 cm \hangafter = -10
     \@ThaiAuthor  : \@ThaiTitle.  (\begin{english}\@EnglishTitle\end{english}) {อ.ที่ปรึกษาวิทยานิพนธ์หลัก : \@ThaiAdvisorShort},
@@ -876,8 +830,6 @@ Copyright of Chulalongkorn University
     } {
     \vfill
 
-    %\renewcommand{\arraystretch}{1.0}
-    
     \noindent
     \begin{tabular}{@{}p{6cm}p{8.3cm}@{}}
             & \\
@@ -889,13 +841,8 @@ Copyright of Chulalongkorn University
     \fi
     \end{tabular}
     
-    %\renewcommand{\arraystretch}{1.0}
-    %\renewcommand{\arraystretch}{0.75}
     \normalsize
 
-
-
-%  \selectthesislang
 }
 
 \newenvironment{englishabstract}{
@@ -907,12 +854,10 @@ Copyright of Chulalongkorn University
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \@AbstractEnglishString}{\@ThaiFont\thepage}}
     \noindent
-    %\hangindent = 1.0 cm \hangafter = 2
     \#\# \@AuthorID : MAJOR \uppercase{\@EnglishFieldOfStudyUP} \\
     KEYWORDS: \@Keywords
 
     \vspace{-\parskip}
-    %\noindent
     \hangindent = 1.0 cm \hangafter = 1
     \uppercase{\@EnglishAuthorUP} : \@EnglishTitle. ADVISOR : \uppercase{\@EnglishAdvisorShort},
     {\if@coadvisor THESIS COADVISOR : \uppercase{\@EnglishCoAdvisorUP},\fi } \ref{@TheLastPage} pp.
@@ -966,11 +911,7 @@ Copyright of Chulalongkorn University
 }
 
 \newcommand\thereferences{
-    %\clearpage
-    %\thispagestyle{empty}
     \toccont
     \addtocontents{toc}{\protect\vspace*{-0.5cm}}
     \addtocontents{toc}{\protect\contentsline{nchapter}{\bfseries \bibname}{\@ThaiFont\thepage}}
-    %\centerline{\bfseries\Large \bibname}
-    %\renewcommand\bibname{\bibname}
 }
